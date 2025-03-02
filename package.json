@@ -8,6 +8,10 @@
   "scripts": {
     "build:css": "tailwindcss -i config/tailwind.config.css --minify -o docs/statics/css/bundle.css",
     "build:js": "esbuild config/esbuild.config.js --bundle --minify --outfile=docs/statics/js/bundle.js",
-    "build": "npm-run-all build:*"
+    "build": "npm-run-all build:*",
+    "watch:css": "tailwindcss -i config/tailwind.config.css -o docs/statics/css/bundle.css --watch",
+    "watch:js": "esbuild config/esbuild.config.js --bundle --outfile=docs/statics/js/bundle.js --watch",
+    "serve": "cd docs && uv run python -m http.server 8000",
+    "dev": "npm-run-all --parallel watch:* serve"
   }
 }
