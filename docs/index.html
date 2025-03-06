@@ -36,29 +36,40 @@
     <!-- Schema.org markup -->
     <script type="application/ld+json">
       {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "All Tuner Labs",
-        "description": "Tech Made in Barcelona's Poblenou",
-        "url": "https://alltuner.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Barcelona",
-          "addressRegion": "Catalonia",
-          "addressCountry": "ES",
-          "postalCode": "08005"
-        },
-        "founder": {
-          "@type": "Person",
-          "name": "David Poblador i Garcia",
-          "url": "https://davidpoblador.com",
-          "sameAs": [
-            "https://twitter.com/dpoblador",
-            "https://www.linkedin.com/in/davidpoblador"
-          ]
-        }
+        "@context": "http://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "All Tuner Labs",
+            "description": "Tech Made in Barcelona's Poblenou",
+            "url": "https://alltuner.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Barcelona",
+              "addressRegion": "Catalonia",
+              "addressCountry": "ES",
+              "postalCode": "08005"
+            },
+            "founder": {
+              "@type": "Person",
+              "name": "David Poblador i Garcia",
+              "url": "https://davidpoblador.com",
+              "sameAs": [
+                "https://twitter.com/dpoblador",
+                "https://www.linkedin.com/in/davidpoblador"
+              ]
+            }
+          },
+          {
+            "@type": "WebSite",
+            "name": "All Tuner Labs",
+            "url": "https://alltuner.com"
+          }
+        ]
       }
     </script>
+    <link rel="icon" href="/favicon.ico" />
+
     <script src="/statics/js/bundle.js"></script>
     <link rel="stylesheet" href="/statics/css/bundle.css" />
   </head>
@@ -70,12 +81,11 @@
         All Tuner Labs
       </h1>
       <p class="mt-4 font-serif text-lg text-gray-600 tracking-wide">
-        🔧 Crafting Tech with
-        <span
+        Crafting&nbsp;🛠️ with&nbsp;<span
           class="bg-gradient-to-r from-pink-500 via-red-500 to-purple-500 bg-clip-text text-transparent font-bold hover:animate-pulse"
           >Love</span
         >
-        in Poblenou ❤️
+        in&nbsp;Poblenou ❤️
       </p>
     </div>
 
