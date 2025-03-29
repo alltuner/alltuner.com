@@ -1,0 +1,7 @@
+[env]
+_.file = '.env'
+
+[settings]
+
+[settings.python]
+uv_venv_auto = true
