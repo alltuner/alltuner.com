@@ -9,7 +9,7 @@ lucide/dist/esm/createElement.js:
 lucide/dist/esm/replaceElement.js:
 lucide/dist/esm/lucide.js:
   (**
-   * @license lucide v0.503.0 - ISC
+   * @license lucide v0.507.0 - ISC
    *
    * This source code is licensed under the ISC license.
    * See the LICENSE file in the root directory of this source tree.
