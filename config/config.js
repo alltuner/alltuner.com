@@ -1,4 +1,4 @@
-import { createIcons } from "lucide";
+import { createIcons, Linkedin, Bird } from "lucide";
 
 // Include needed icons from lucide or lucide-lab.
 // Example:
@@ -9,9 +9,12 @@ import { createIcons } from "lucide";
 // and the uppercase version of the import
 
 // import { butterfly as Butterfly } from "@lucide/lab";
+import { butterfly as Butterfly } from "@lucide/lab";
 
 createIcons({
   icons: {
-    // Include a Comma Separated List of Icons
+    Linkedin,
+    Butterfly,
+    Bird,
   },
 });

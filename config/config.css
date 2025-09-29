@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-wine: #5b2333;
+  --color-smoke: #f7f4f3;
+  --color-taupe: #928e8d;
+  --color-raisin: #2c2826;
+}
