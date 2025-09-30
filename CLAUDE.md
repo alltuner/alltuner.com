@@ -15,9 +15,9 @@ This is a static website template built with a modern frontend toolchain. Sites 
 ### Individual Build Commands
 
 - `bun run build:css` - Build and minify CSS with Tailwind
-- `bun run build:js` - Bundle and minify JavaScript with esbuild
-- `bun run watch:css` - Watch CSS changes during development
-- `bun run watch:js` - Watch JS changes during development
+- `bun run build:js` - Bundle and minify JavaScript with Bun's bundler
+- `bun run dev:css` - Watch CSS changes during development
+- `bun run dev:js` - Watch JS changes during development
 
 ### Deployment
 
@@ -32,8 +32,8 @@ The project follows a simple static site structure:
   - `index.html`: Main landing page
   - `statics/`: Contains versioned CSS and JS bundles
 - **config/**: Build configuration and utilities
-  - `esbuild.config.js`: JavaScript bundling with Lucide icons
-  - `tailwind.config.css`: Tailwind CSS configuration
+  - `config.js`: JavaScript bundling entry that registers Lucide icons
+  - `config.css`: Tailwind CSS configuration
   - `version-statics.py`: Python script for cache-busting static assets
   - `purge-cf.py`: Cloudflare cache purging utility
 
@@ -41,16 +41,16 @@ The project follows a simple static site structure:
 
 The build system automatically:
 
-1. Bundles JS with esbuild (config/esbuild.config.js)
+1. Bundles JS with Bun (config/config.js)
 2. Compiles CSS with Tailwind CSS
 3. Adds content-based version hashes to static files for cache busting
 4. Updates HTML references to include version parameters
 
 ### Icon System
 
-Uses Lucide icons via esbuild. To add icons:
+Uses Lucide icons via Bun's bundler. To add icons:
 
-1. Import needed icons in `config/esbuild.config.js`
+1. Import needed icons in `config/config.js`
 2. Add them to the `createIcons()` configuration
 3. Reference in HTML with `data-lucide="icon-name"`
 

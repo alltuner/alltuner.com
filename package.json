@@ -3,20 +3,19 @@
     "@lucide/lab": "^0.1.2",
     "@tailwindcss/cli": "^4.1.13",
     "@tailwindcss/typography": "^0.5.19",
-    "esbuild": "^0.25.10",
     "lucide": "^0.544.0",
-    "npm-run-all2": "^8.0.4",
+    "concurrently": "^9.2.1",
     "tailwindcss": "^4.1.13"
   },
   "scripts": {
-    "build:css": "tailwindcss -i config/tailwind.config.css --minify -o docs/statics/css/bundle.css",
-    "build:js": "esbuild config/esbuild.config.js --bundle --minify --outfile=docs/statics/js/bundle.js",
-    "build": "npm-run-all build:* version-statics",
+    "build:css": "bun tailwindcss -i config/config.css --minify -o docs/statics/css/bundle.css",
+    "build:js": "bun build config/config.js --minify --outdir=docs/statics/js --entry-naming='bundle.[ext]'",
+    "build": "bun run build:css && bun run build:js && bun run version-statics",
     "purge-cf": "uv run --with python-cloudflare config/purge-cf.py",
     "version-statics": "uv run --with beautifulsoup4,typer config/version-statics.py docs",
-    "watch:css": "tailwindcss -i config/tailwind.config.css -o docs/statics/css/bundle.css --watch",
-    "watch:js": "esbuild config/esbuild.config.js --bundle --outfile=docs/statics/js/bundle.js --watch",
-    "serve": "cd docs && uv run python -m http.server 8000",
-    "dev": "npm-run-all --parallel watch:* serve"
+    "dev:css": "bun tailwindcss -w -i config/config.css -o docs/statics/css/bundle.css",
+    "dev:js": "bun build config/config.js --watch --outdir=docs/statics/js --entry-naming='bundle.[ext]' --sourcemap",
+    "serve": "uv run --with livereload config/serve.py --host 0.0.0.0",
+    "dev": "concurrently 'bun run dev:css' 'bun run dev:js' 'bun run serve'"
   }
 }
