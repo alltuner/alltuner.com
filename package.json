@@ -1,11 +1,9 @@
 {
   "devDependencies": {
     "@lucide/lab": "^0.1.2",
-    "@tailwindcss/cli": "^4.1.13",
     "@tailwindcss/typography": "^0.5.19",
     "lucide": "^0.544.0",
-    "concurrently": "^9.2.1",
-    "tailwindcss": "^4.1.13"
+    "prototuner": "github:alltuner/prototuner"
   },
   "scripts": {
     "build:css": "bun tailwindcss -i config/config.css --minify -o docs/statics/css/bundle.css",
