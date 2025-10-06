@@ -2,37 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
    <url>
       <loc>https://alltuner.com/</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://alltuner.com/" />
-      <xhtml:link rel="alternate" hreflang="es" href="https://alltuner.com/es/" />
-      <xhtml:link rel="alternate" hreflang="ca" href="https://alltuner.com/ca/" />
-      <xhtml:link rel="alternate" hreflang="sv" href="https://alltuner.com/sv/" />
-      <changefreq>weekly</changefreq>
-      <priority>1.0</priority>
-   </url>
-   <url>
-      <loc>https://alltuner.com/es/</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://alltuner.com/" />
-      <xhtml:link rel="alternate" hreflang="es" href="https://alltuner.com/es/" />
-      <xhtml:link rel="alternate" hreflang="ca" href="https://alltuner.com/ca/" />
-      <xhtml:link rel="alternate" hreflang="sv" href="https://alltuner.com/sv/" />
-      <changefreq>weekly</changefreq>
-      <priority>1.0</priority>
-   </url>
-   <url>
-      <loc>https://alltuner.com/ca/</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://alltuner.com/" />
-      <xhtml:link rel="alternate" hreflang="es" href="https://alltuner.com/es/" />
-      <xhtml:link rel="alternate" hreflang="ca" href="https://alltuner.com/ca/" />
-      <xhtml:link rel="alternate" hreflang="sv" href="https://alltuner.com/sv/" />
-      <changefreq>weekly</changefreq>
-      <priority>1.0</priority>
-   </url>
-   <url>
-      <loc>https://alltuner.com/sv/</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://alltuner.com/" />
-      <xhtml:link rel="alternate" hreflang="es" href="https://alltuner.com/es/" />
-      <xhtml:link rel="alternate" hreflang="ca" href="https://alltuner.com/ca/" />
-      <xhtml:link rel="alternate" hreflang="sv" href="https://alltuner.com/sv/" />
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
