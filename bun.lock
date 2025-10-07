@@ -4,6 +4,7 @@
     "": {
       "devDependencies": {
         "@lucide/lab": "^0.1.2",
+        "@tailwindcss/typography": "^0.5.19",
         "lucide": "^0.545.0",
         "prototuner": "github:alltuner/prototuner",
       },
@@ -324,7 +325,7 @@
 
     "postcss-selector-parser": ["postcss-selector-parser@6.0.10", "", { "dependencies": { "cssesc": "3.0.0", "util-deprecate": "1.0.2" } }, "sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w=="],
 
-    "prototuner": ["prototuner@github:alltuner/prototuner#90f4657", { "dependencies": { "@tailwindcss/cli": "^4.1.14", "@tailwindcss/typography": "^0.5.19", "concurrently": "^9.2.1", "daisyui": "^5.1.27", "htmx-ext-preload": "^2.1.1", "htmx-ext-sse": "^2.2.3", "htmx.org": "2.0.7", "markdownlint-cli": "^0.45.0", "tailwindcss": "^4.1.14" } }, "alltuner-prototuner-90f4657"],
+    "prototuner": ["prototuner@github:alltuner/prototuner#8083aaa", { "dependencies": { "@tailwindcss/cli": "^4.1.14", "@tailwindcss/typography": "^0.5.19", "concurrently": "^9.2.1", "daisyui": "^5.1.27", "htmx-ext-preload": "^2.1.1", "htmx-ext-sse": "^2.2.3", "htmx.org": "2.0.7", "markdownlint-cli": "^0.45.0", "tailwindcss": "^4.1.14" } }, "alltuner-prototuner-8083aaa"],
 
     "punycode.js": ["punycode.js@2.3.1", "", {}, "sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA=="],
 
