@@ -1,4 +1,4 @@
-import { createIcons, Linkedin, Bird } from "lucide";
+import { createIcons, Linkedin, Bird, Github } from "lucide";
 
 // Include needed icons from lucide or lucide-lab.
 // Example:
