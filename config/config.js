@@ -13,8 +13,9 @@ import { butterfly as Butterfly } from "@lucide/lab";
 
 createIcons({
   icons: {
-    Linkedin,
-    Butterfly,
     Bird,
+    Butterfly,
+    Github,
+    Linkedin,
   },
 });
