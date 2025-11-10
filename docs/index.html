@@ -21,26 +21,69 @@
     <meta name="twitter:description" content="Smoothing rough edges through lean technology and craft." />
     <script type="application/ld+json">
         {
-            "@context": "http://schema.org",
+            "@context": "https://schema.org",
             "@graph": [{
                 "@type": "Organization",
                 "name": "All Tuner Labs",
                 "description": "Smoothing rough edges through lean technology and craft.",
-                "url": "https://alltuner.com",
+                "url": "https://www.alltuner.com/",
+                "@id": "https://www.alltuner.com/#org",
                 "founder": {
                     "@type": "Person",
-                    "name": "David Poblador",
+                    "name": "David Poblador i Garcia",
                     "url": "https://davidpoblador.com",
                     "sameAs": [
                         "https://www.linkedin.com/in/davidpoblador",
                         "https://bsky.app/profile/davidpoblador.com",
                         "https://x.com/dpoblador"
                     ]
+                },
+                "foundingLocation": "Barcelona, Spain",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://alltuner.com/statics/img/all-tuner-logo.svg",
+                    "width": 1024,
+                    "height": 1024
+                },
+                "brand": {
+                    "@type": "Brand",
+                    "name": "All Tuner Labs"
                 }
+                "sameAs": [
+                    "https://twitter.com/alltuner_labs",
+                    "https://www.linkedin.com/company/alltuner",
+                    "https://github.com/alltuner",
+                    "https://bsky.app/profile/alltuner.com",
+                    "https://x.com/alltuner_labs",
+                    "https://www.instagram.com/alltuner_labs"
+                ],
+                "knowsAbout": [
+                    "AI media tooling",
+                    "podcasting platforms",
+                    "news personalization",
+                    "generative audio",
+                    "FastAPI applications",
+                    "Docker and DevOps"
+                ]
             }, {
                 "@type": "WebSite",
+                "@id": "https://www.alltuner.com/#website",
+                "url": "https://www.alltuner.com/",
                 "name": "All Tuner Labs",
-                "url": "https://alltuner.com"
+                "publisher": {
+                    "@id": "https://www.alltuner.com/#org"
+                }
+            }, {
+                "@type": "SoftwareApplication",
+                "@id": "https://vibetuner.alltuner.com/#app",
+                "name": "VibeTuner",
+                "applicationCategory": "DeveloperApplication",
+                "url": "https://vibetuner.alltuner.com/",
+                "image": "https://alltuner.com/statics/img/vibetuner-horizontal-logo.png",
+                "description": "Production-ready FastAPI + MongoDB + HTMX project scaffolding in seconds.",
+                "publisher": {
+                    "@id": "https://www.alltuner.com/#org"
+                }
             }]
         }
     </script>
