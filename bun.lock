@@ -1,11 +1,12 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "devDependencies": {
         "@lucide/lab": "^0.1.2",
         "@tailwindcss/typography": "^0.5.19",
-        "lucide": "^0.545.0",
+        "lucide": "^0.562.0",
         "prototuner": "github:alltuner/prototuner",
       },
     },
@@ -159,7 +160,7 @@
 
     "lightningcss-win32-x64-msvc": ["lightningcss-win32-x64-msvc@1.30.2", "", { "os": "win32", "cpu": "x64" }, "sha512-5g1yc73p+iAkid5phb4oVFMB45417DkRevRbt/El/gKXJk4jid+vPFF/AXbxn05Aky8PapwzZrdJShv5C0avjw=="],
 
-    "lucide": ["lucide@0.545.0", "", {}, "sha512-mrBH0upkb1TH8ZLkf0XERQAKMdTJ1C+Offr7eSvanmdQ7JrV8jkrFw5jgRAS8fygiZgG4X9mfEg/BXCL+mNMRw=="],
+    "lucide": ["lucide@0.562.0", "", {}, "sha512-k1Fb8ZMnRQovWRlea7Jr0b9UKA29IM7/cu79+mJrhVohvA2YC/Ti3Sk+G+h/SIu3IlrKT4RAbWMHUBBQd1O6XA=="],
 
     "magic-string": ["magic-string@0.30.21", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.5" } }, "sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ=="],
 
