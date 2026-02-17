@@ -16,6 +16,9 @@ static/fonts/
 .env
 .env.*
 
+# Claude Code
+.claude/
+
 # OS
 .DS_Store
 
