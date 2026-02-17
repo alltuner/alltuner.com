@@ -7,5 +7,8 @@ other = "Social links"
 [founded_by]
 other = "Founded by"
 
+[founder_url]
+other = "https://davidpoblador.com"
+
 [location]
 other = "Barcelona"
