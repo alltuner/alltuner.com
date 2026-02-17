@@ -102,78 +102,99 @@
     <link href="/statics/img/favicon.svg" rel="icon" type="image/svg+xml" />
     <link rel="preconnect" href="https://meta.alltuner.com" />
     <link rel="dns-prefetch" href="https://meta.alltuner.com" />
-    <link href="/statics/css/bundle.f032cc08.css" rel="stylesheet" />
+    <link href="/statics/css/bundle.41a5c531.css" rel="stylesheet" />
     <script defer
             src="https://meta.alltuner.com/meta.js"
             data-website-id="47dc1152-869a-458e-99f3-829bc04e009e"></script>
   </head>
-  <body class="bg-gradient-to-br from-wine/40 via-20% via-smoke via-80% to-wine/60 text-smoke overflow-x-hidden min-h-screen leading-relaxed antialiased">
-    <header class="bg-transparent">
-      <div class="max-w-6xl mx-auto px-6 md:px-8 py-24 md:py-32 flex flex-col items-center text-center gap-12 text-raisin">
-        <div class="flex items-center justify-center">
-          <img src="/statics/img/all-tuner-logo.svg"
-               alt="All Tuner Labs Logo"
-               class="h-24 w-auto md:h-64"
-               width="1024"
-               height="1024" />
-        </div>
-        <div class="flex flex-col items-center gap-8">
-          <h1 class="relative inline-flex items-start uppercase">
-            <span class="sr-only">All Tuner Labs</span>
-          </h1>
-        </div>
-        <div class="max-w-3xl mx-auto space-y-4">
-          <p class="text-lg md:text-xl text-raisin/90 font-medium">
-            Smoothing rough edges through lean technology and craft
-          </p>
-          <p class="text-base md:text-lg text-raisin/70">
+  <body class="bg-smoke text-raisin overflow-x-hidden min-h-screen antialiased selection-wine relative">
+    <!-- Noise texture overlay -->
+    <div class="fixed inset-0 bg-noise opacity-[0.03] pointer-events-none z-50" aria-hidden="true"></div>
+
+    <!-- Gradient accent from top -->
+    <div class="fixed inset-0 gradient-radial opacity-20 pointer-events-none" aria-hidden="true"></div>
+
+    <!-- Decorative floating shapes -->
+    <div class="fixed top-[15%] right-[8%] w-48 h-48 md:w-72 md:h-72 rounded-full bg-wine/[0.06] blur-3xl animate-float pointer-events-none" aria-hidden="true"></div>
+    <div class="fixed bottom-[20%] left-[5%] w-36 h-36 md:w-56 md:h-56 rounded-full bg-taupe/[0.08] blur-3xl animate-pulse-soft pointer-events-none" style="animation-delay: -2s" aria-hidden="true"></div>
+
+    <div class="relative z-10 min-h-screen flex flex-col">
+      <header class="flex-1 flex items-center justify-center">
+        <div class="max-w-5xl mx-auto px-6 md:px-8 py-20 md:py-28 flex flex-col items-center text-center">
+          <!-- Logo -->
+          <div class="animate-scale-in">
+            <img src="/statics/img/all-tuner-logo.svg"
+                 alt="All Tuner Labs Logo"
+                 class="h-28 w-auto md:h-56 drop-shadow-sm"
+                 width="1024"
+                 height="1024" />
+          </div>
+
+          <h1 class="sr-only">All Tuner Labs</h1>
+
+          <!-- Main tagline -->
+          <div class="mt-12 md:mt-16 max-w-2xl animate-fade-up" style="animation-delay: 0.15s">
+            <p class="font-display text-2xl md:text-4xl lg:text-5xl text-raisin font-light leading-tight tracking-tight text-balance">
+              Smoothing rough edges through <em class="font-normal italic text-wine">lean technology</em> and <em class="font-normal italic text-wine">craft</em>
+            </p>
+          </div>
+
+          <!-- Subtitle -->
+          <p class="mt-6 md:mt-8 text-base md:text-lg text-taupe font-normal max-w-md animate-fade-up" style="animation-delay: 0.3s">
             Built on decades helping companies scale. Out of Barcelona.
           </p>
+
+          <!-- Decorative line -->
+          <div class="mt-12 md:mt-16 h-px w-24 bg-gradient-to-r from-transparent via-wine/50 to-transparent origin-center animate-draw-line" style="animation-delay: 0.5s" aria-hidden="true"></div>
         </div>
-        <div class="h-px w-32 bg-gradient-to-r from-transparent via-wine/40 to-transparent"></div>
-      </div>
-    </header>
-    <main id="main" role="main">
-    </main>
-    <footer class="py-12 bg-transparent text-raisin" role="contentinfo">
-      <div class="max-w-6xl mx-auto px-6 md:px-8">
-        <div class="grid gap-6 md:grid-cols-[1fr_auto_1fr] md:items-start text-xs md:text-sm">
-          <p class="text-xs md:text-sm text-raisin/60 text-center md:text-left">
-            © 2025 All Tuner Labs. Barcelona.
-          </p>
-          <div class="flex flex-col items-center gap-3">
-            <nav aria-label="Social links" class="flex justify-center text-xs md:text-sm">
-              <div class="flex items-center gap-4 text-raisin/60">
-                <a href="https://www.linkedin.com/company/alltuner"
-                   class="hover:text-raisin transition-colors focus:outline-none focus:ring-2 focus:ring-wine/40 focus:ring-offset-2 focus:ring-offset-smoke rounded p-1"
-                   aria-label="LinkedIn">
-                  <span data-lucide="linkedin" class="h-4 w-4"></span>
-                </a>
-                <a href="https://github.com/alltuner"
-                   class="hover:text-raisin transition-colors focus:outline-none focus:ring-2 focus:ring-wine/40 focus:ring-offset-2 focus:ring-offset-smoke rounded p-1"
-                   aria-label="GitHub">
-                  <span data-lucide="github" class="h-4 w-4"></span>
-                </a>
-                <a href="https://bsky.app/profile/alltuner.com"
-                   class="hover:text-raisin transition-colors focus:outline-none focus:ring-2 focus:ring-wine/40 focus:ring-offset-2 focus:ring-offset-smoke rounded p-1"
-                   aria-label="Bluesky">
-                  <span data-lucide="butterfly" class="h-4 w-4"></span>
-                </a>
-                <a href="https://x.com/alltuner_labs"
-                   class="hover:text-raisin transition-colors focus:outline-none focus:ring-2 focus:ring-wine/40 focus:ring-offset-2 focus:ring-offset-smoke rounded p-1"
-                   aria-label="X (Twitter)">
-                  <span data-lucide="bird" class="h-4 w-4"></span>
-                </a>
-              </div>
-            </nav>
+      </header>
+
+      <main id="main" role="main">
+      </main>
+
+      <footer class="py-10 md:py-14" role="contentinfo">
+        <div class="max-w-5xl mx-auto px-6 md:px-8 animate-fade-in" style="animation-delay: 0.6s">
+          <!-- Social links - centered and prominent -->
+          <nav aria-label="Social links" class="flex justify-center mb-8">
+            <div class="flex items-center gap-1">
+              <a href="https://www.linkedin.com/company/alltuner"
+                 class="group relative p-3 rounded-full hover:bg-wine/5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-wine/40"
+                 aria-label="LinkedIn">
+                <span data-lucide="linkedin" class="h-5 w-5 text-taupe group-hover:text-wine transition-colors duration-300"></span>
+              </a>
+              <a href="https://github.com/alltuner"
+                 class="group relative p-3 rounded-full hover:bg-wine/5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-wine/40"
+                 aria-label="GitHub">
+                <span data-lucide="github" class="h-5 w-5 text-taupe group-hover:text-wine transition-colors duration-300"></span>
+              </a>
+              <a href="https://bsky.app/profile/alltuner.com"
+                 class="group relative p-3 rounded-full hover:bg-wine/5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-wine/40"
+                 aria-label="Bluesky">
+                <span data-lucide="butterfly" class="h-5 w-5 text-taupe group-hover:text-wine transition-colors duration-300"></span>
+              </a>
+              <a href="https://x.com/alltuner_labs"
+                 class="group relative p-3 rounded-full hover:bg-wine/5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-wine/40"
+                 aria-label="X (Twitter)">
+                <span data-lucide="bird" class="h-5 w-5 text-taupe group-hover:text-wine transition-colors duration-300"></span>
+              </a>
+            </div>
+          </nav>
+
+          <!-- Credits row -->
+          <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6 text-sm text-taupe">
+            <p>© 2025 All Tuner Labs</p>
+            <span class="hidden md:block text-taupe/40">·</span>
+            <p>
+              Founded by <a href="https://davidpoblador.com"
+                            class="text-raisin/80 hover:text-wine transition-colors duration-300 underline decoration-wine/30 underline-offset-2 hover:decoration-wine/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-wine/40 rounded">David Poblador i Garcia</a>
+            </p>
+            <span class="hidden md:block text-taupe/40">·</span>
+            <p>Barcelona</p>
           </div>
-          <p class="text-xs md:text-sm text-raisin/70 text-center md:text-right">
-            Founded by <a href="https://davidpoblador.com"
-    class="text-wine hover:text-raisin transition-colors underline underline-offset-2 focus:outline-none focus:ring-2 focus:ring-wine/40 focus:ring-offset-2 focus:ring-offset-smoke rounded px-1">David Poblador i Garcia</a>
-          </p>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
+
     <script src="/statics/js/bundle.k24kbdkq.js"></script>
   </body>
 </html>
