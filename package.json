@@ -12,8 +12,7 @@
     "assets": "bun run --parallel fonts css:build js:build",
     "build": "bun run --sequential assets hugo",
     "dev": "bun run --parallel css:watch js:watch serve",
-    "serve": "hugo serve --disableFastRender --gc",
-    "purge-cf": "uv run --with python-cloudflare config/purge-cf.py"
+    "serve": "hugo serve --disableFastRender --gc"
   },
   "dependencies": {
     "@fontsource-variable/fraunces": "^5.2.9",
