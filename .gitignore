@@ -12,10 +12,6 @@ assets/
 # Static fonts (copied from node_modules during build)
 static/fonts/
 
-# Environment
-.env
-.env.*
-
 # Claude Code
 .claude/
 
