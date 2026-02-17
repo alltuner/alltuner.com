@@ -1,0 +1,101 @@
+baseURL = "https://alltuner.com"
+title = "All Tuner Labs"
+theme = "alltuner-theme"
+disableHugoGeneratorInject = true
+enableRobotsTXT = true
+ignoreFiles = ["CLAUDE\\.md", "AGENTS\\.md"]
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.en]
+    weight = 1
+    languageCode = "en"
+    languageName = "English"
+  [languages.ca]
+    weight = 2
+    languageCode = "ca"
+    languageName = "Catala"
+    contentDir = "content/ca"
+  [languages.es]
+    weight = 3
+    languageCode = "es"
+    languageName = "Espanol"
+    contentDir = "content/es"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[params]
+description = "Smoothing rough edges through lean technology and craft."
+twitter = "@alltuner_labs"
+analyticsID = "47dc1152-869a-458e-99f3-829bc04e009e"
+analyticsSrc = "https://meta.alltuner.com/meta.js"
+
+[[params.social]]
+name = "LinkedIn"
+url = "https://www.linkedin.com/company/alltuner"
+icon = "linkedin"
+
+[[params.social]]
+name = "GitHub"
+url = "https://github.com/alltuner"
+icon = "github"
+
+[[params.social]]
+name = "Bluesky"
+url = "https://bsky.app/profile/alltuner.com"
+icon = "bluesky"
+
+[[params.social]]
+name = "X"
+url = "https://x.com/alltuner_labs"
+icon = "x"
+
+[[params.alternates]]
+hreflang = "en"
+href = "https://alltuner.com/"
+
+[[params.alternates]]
+hreflang = "ca"
+href = "https://alltuner.com/ca/"
+
+[[params.alternates]]
+hreflang = "es"
+href = "https://alltuner.com/es/"
+
+[[params.alternates]]
+hreflang = "x-default"
+href = "https://alltuner.com/"
+
+[params.jsonld]
+orgName = "All Tuner Labs"
+orgDescription = "Smoothing rough edges through lean technology and craft."
+founderName = "David Poblador i Garcia"
+founderURL = "https://davidpoblador.com"
+foundingLocation = "Barcelona, Spain"
+logoURL = "https://alltuner.com/statics/img/all-tuner-logo.svg"
+logoWidth = 1024
+logoHeight = 1024
+sameAs = [
+  "https://twitter.com/alltuner_labs",
+  "https://www.linkedin.com/company/alltuner",
+  "https://github.com/alltuner",
+  "https://bsky.app/profile/alltuner.com",
+  "https://x.com/alltuner_labs",
+  "https://www.instagram.com/alltuner_labs",
+]
+founderSameAs = [
+  "https://www.linkedin.com/in/davidpoblador",
+  "https://bsky.app/profile/davidpoblador.com",
+  "https://x.com/dpoblador",
+]
+knowsAbout = [
+  "AI media tooling",
+  "podcasting platforms",
+  "news personalization",
+  "generative audio",
+  "FastAPI applications",
+  "Docker and DevOps",
+]

@@ -8,17 +8,23 @@ dev:
     @echo "Starting development server..."
     @bun run dev
 
-# Build production bundles
+# Build production site
 [group('Build')]
 build:
-    @echo "Building production bundles..."
+    @echo "Building production site..."
     @bun run build
 
-# Serve the docs directory locally
+# Clean build output
+[group('Build')]
+clean:
+    @echo "Cleaning build output..."
+    @bun run clean
+
+# Serve the site locally with Hugo
 [group('Local Development')]
-serve PORT="8000":
-    @echo "Serving docs on port {{PORT}}..."
-    @PORT={{PORT}} bun run serve
+serve:
+    @echo "Serving site..."
+    @bun run serve
 
 # Purge Cloudflare cache (requires CLOUDFLARE_ZONE_ID and CLOUDFLARE_API_TOKEN)
 [group('Deploy')]

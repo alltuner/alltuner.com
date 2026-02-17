@@ -1,0 +1,34 @@
+{{ define "content" }}
+<header class="flex-1 flex items-center justify-center">
+  <div class="max-w-5xl mx-auto px-6 md:px-8 py-20 md:py-28 flex flex-col items-center text-center">
+    <!-- Logo -->
+    <div class="animate-scale-in">
+      <img src="/statics/img/all-tuner-logo.svg"
+           alt="{{ .Site.Title }} Logo"
+           class="h-28 w-auto md:h-56 drop-shadow-sm"
+           width="1024"
+           height="1024" />
+    </div>
+
+    <h1 class="sr-only">{{ .Site.Title }}</h1>
+
+    <!-- Main tagline -->
+    <div class="mt-12 md:mt-16 max-w-2xl animate-fade-up" style="animation-delay: 0.15s">
+      <p class="font-display text-2xl md:text-4xl lg:text-5xl text-raisin font-light leading-tight tracking-tight text-balance">
+        {{ .Params.tagline | safeHTML }}
+      </p>
+    </div>
+
+    <!-- Subtitle -->
+    <p class="mt-6 md:mt-8 text-base md:text-lg text-taupe font-normal max-w-md animate-fade-up" style="animation-delay: 0.3s">
+      {{ .Params.subtitle }}
+    </p>
+
+    <!-- Decorative line -->
+    <div class="mt-12 md:mt-16 h-px w-24 bg-gradient-to-r from-transparent via-wine/50 to-transparent origin-center animate-draw-line" style="animation-delay: 0.5s" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main id="main" role="main">
+</main>
+{{ end }}
