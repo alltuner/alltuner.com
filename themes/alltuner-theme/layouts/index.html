@@ -1,6 +1,6 @@
 {{ define "content" }}
-<header class="flex-1 flex items-center justify-center">
-  <div class="max-w-5xl mx-auto px-6 md:px-8 py-20 md:py-28 flex flex-col items-center text-center">
+<header class="flex items-center justify-center">
+  <div class="max-w-5xl mx-auto px-6 md:px-8 pt-20 md:pt-28 pb-12 md:pb-16 flex flex-col items-center text-center">
     <!-- Logo -->
     <div class="animate-scale-in">
       <img src="/statics/img/all-tuner-logo.svg"
@@ -20,8 +20,8 @@
     </div>
 
     <!-- Subtitle -->
-    <p class="mt-6 md:mt-8 text-base md:text-lg text-taupe font-normal max-w-md animate-fade-up" style="animation-delay: 0.3s">
-      {{ .Params.subtitle }}
+    <p class="mt-6 md:mt-8 text-base md:text-lg text-taupe font-normal max-w-lg animate-fade-up" style="animation-delay: 0.3s">
+      {{ .Params.subtitle }}<br>{{ .Params.subtitle2 }}
     </p>
 
     <!-- Decorative line -->

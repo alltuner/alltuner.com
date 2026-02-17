@@ -89,59 +89,57 @@
   <!-- Noise texture overlay -->
   <div class="fixed inset-0 bg-noise opacity-[0.03] pointer-events-none z-50" aria-hidden="true"></div>
 
-  <!-- Gradient accent from top -->
-  <div class="fixed inset-0 gradient-radial opacity-20 pointer-events-none" aria-hidden="true"></div>
+  <!-- Gradient accents -->
+  <div class="fixed inset-0 gradient-radial opacity-25 pointer-events-none" aria-hidden="true"></div>
+  <div class="fixed inset-0 gradient-bottom opacity-[0.07] pointer-events-none" aria-hidden="true"></div>
 
   <!-- Decorative floating shapes -->
-  <div class="fixed top-[15%] right-[8%] w-48 h-48 md:w-72 md:h-72 rounded-full bg-wine/[0.06] blur-3xl animate-float pointer-events-none" aria-hidden="true"></div>
-  <div class="fixed bottom-[20%] left-[5%] w-36 h-36 md:w-56 md:h-56 rounded-full bg-taupe/[0.08] blur-3xl animate-pulse-soft pointer-events-none" style="animation-delay: -2s" aria-hidden="true"></div>
+  <div class="fixed top-[12%] right-[10%] w-56 h-56 md:w-80 md:h-80 rounded-full bg-wine/[0.07] blur-3xl animate-float pointer-events-none" aria-hidden="true"></div>
+  <div class="fixed bottom-[18%] left-[5%] w-44 h-44 md:w-64 md:h-64 rounded-full bg-taupe/[0.09] blur-3xl animate-pulse-soft pointer-events-none" style="animation-delay: -2s" aria-hidden="true"></div>
+  <div class="fixed top-[55%] left-[60%] w-32 h-32 md:w-48 md:h-48 rounded-full bg-wine/[0.04] blur-3xl animate-float pointer-events-none" style="animation-delay: -4s; animation-duration: 8s" aria-hidden="true"></div>
 
-  <div class="relative z-10 min-h-screen flex flex-col">
+  <div class="relative z-10 min-h-screen flex flex-col items-center justify-center -mt-[5vh]">
     {{ block "content" . }}{{ end }}
 
-    <footer class="py-10 md:py-14" role="contentinfo">
-      <div class="max-w-5xl mx-auto px-6 md:px-8 animate-fade-in" style="animation-delay: 0.6s">
-        <!-- Social links -->
-        {{ with .Site.Params.social }}
-        <nav aria-label="{{ T "social_links_label" }}" class="flex justify-center mb-8">
-          <div class="flex items-center gap-1">
+    <footer class="pb-8 md:pb-12 animate-fade-in" style="animation-delay: 0.6s" role="contentinfo">
+      <div class="max-w-5xl mx-auto px-6 md:px-8 flex flex-col items-center gap-5">
+        <!-- Social + language row -->
+        <div class="flex items-center gap-4">
+          {{ with .Site.Params.social }}
+          <nav aria-label="{{ T "social_links_label" }}" class="flex items-center gap-0.5">
             {{- range . }}
             <a href="{{ .url }}"
-               class="group relative p-3 rounded-full hover:bg-wine/5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-wine/40"
+               class="group p-2.5 rounded-full hover:bg-wine/5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-wine/40"
                aria-label="{{ .name }}">
-              {{ partial "icons/social-icon.html" (dict "icon" .icon "class" "h-5 w-5 text-taupe group-hover:text-wine transition-colors duration-300") }}
+              {{ partial "icons/social-icon.html" (dict "icon" .icon "class" "h-[18px] w-[18px] text-taupe group-hover:text-wine transition-colors duration-300") }}
             </a>
             {{- end }}
-          </div>
-        </nav>
-        {{ end }}
-
-        <!-- Language switcher -->
-        <nav aria-label="{{ T "language_label" }}" class="flex justify-center mb-6">
-          <div class="flex items-center gap-1 text-sm">
+          </nav>
+          {{ end }}
+          <span class="text-taupe/25 text-xs">|</span>
+          <nav aria-label="{{ T "language_label" }}" class="flex items-center gap-1.5 text-xs tracking-wide">
             {{- range $i, $lang := .Site.Languages -}}
-            {{- if $i }} <span class="text-taupe/30">/</span> {{ end -}}
+            {{- if $i }} <span class="text-taupe/25">/</span> {{ end -}}
             {{- if eq $lang.Lang $.Language.Lang -}}
-            <span class="text-raisin font-medium">{{ $lang.LanguageName }}</span>
+            <span class="text-raisin/70 font-medium uppercase">{{ $lang.Lang }}</span>
             {{- else -}}
             <a href="{{ with $.Translations }}{{ range . }}{{ if eq .Language.Lang $lang.Lang }}{{ .RelPermalink }}{{ end }}{{ end }}{{ else }}/{{ $lang.Lang }}/{{ end }}"
-               class="text-taupe hover:text-wine transition-colors duration-300">{{ $lang.LanguageName }}</a>
+               class="text-taupe/60 hover:text-wine transition-colors duration-300 uppercase">{{ $lang.Lang }}</a>
             {{- end -}}
             {{- end }}
-          </div>
-        </nav>
-
-        <!-- Credits row -->
-        <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6 text-sm text-taupe">
-          <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}</p>
-          <span class="hidden md:block text-taupe/40">&middot;</span>
-          <p>
-            {{ T "founded_by" }} <a href="{{ T "founder_url" }}"
-                          class="text-raisin/80 hover:text-wine transition-colors duration-300 underline decoration-wine/30 underline-offset-2 hover:decoration-wine/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-wine/40 rounded">David Poblador i Garcia</a>
-          </p>
-          <span class="hidden md:block text-taupe/40">&middot;</span>
-          <p>{{ T "location" }}</p>
+          </nav>
         </div>
+
+        <!-- Credits -->
+        <p class="text-xs text-taupe/60 text-center">
+          {{ T "founded_by" }}
+          <a href="{{ T "founder_url" }}"
+             class="text-taupe hover:text-wine transition-colors duration-300 underline decoration-taupe/20 underline-offset-2 hover:decoration-wine/40">David Poblador i Garcia</a>
+          <span class="text-taupe/25">&middot;</span>
+          {{ T "location" }}
+          <span class="text-taupe/25">&middot;</span>
+          &copy; {{ now.Format "2006" }}
+        </p>
       </div>
     </footer>
   </div>
