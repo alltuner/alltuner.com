@@ -130,6 +130,7 @@ name = "Radar de la Música"
 description = "Curated directory of music innovation projects in Barcelona, with Barcelona Music Lab."
 description_ca = "Directori de projectes d'innovació musical a Barcelona, amb Barcelona Music Lab."
 description_es = "Directorio de proyectos de innovación musical en Barcelona, con Barcelona Music Lab."
+link = "https://bcnmusiclab.com/en/2025/10/23/radar-de-la-musica-a-new-strategic-tool-to-map-music-innovation-connected-to-barcelona/"
 status = "developing"
 
 [[params.projects]]
@@ -147,3 +148,20 @@ description_ca = "Plataforma de salut d'equips d'enginyeria amb consells pràcti
 description_es = "Plataforma de salud de equipos de ingeniería con consejos prácticos, de ingenieros para ingenieros."
 link = "https://devtuner.com"
 status = "idea"
+
+# Minor projects
+[[params.minor_projects]]
+name = "cookietuner"
+link = "https://github.com/alltuner/cookietuner"
+
+[[params.minor_projects]]
+name = "vaultuner"
+link = "https://github.com/alltuner/vaultuner"
+
+[[params.minor_projects]]
+name = "mise-completions-sync"
+link = "https://github.com/alltuner/mise-completions-sync"
+
+[[params.minor_projects]]
+name = "projectuner"
+link = "https://github.com/alltuner/projectuner"

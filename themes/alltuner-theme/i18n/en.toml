@@ -33,3 +33,6 @@ other = "Idea"
 
 [status_archived]
 other = "Archived"
+
+[minor_projects_title]
+other = "Open source & tools"
