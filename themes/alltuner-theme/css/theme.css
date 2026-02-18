@@ -57,6 +57,7 @@
   html {
     font-family: var(--font-body);
     font-optical-sizing: auto;
+    overscroll-behavior: none;
   }
 }
 
