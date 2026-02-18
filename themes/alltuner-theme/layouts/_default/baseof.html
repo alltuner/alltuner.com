@@ -103,6 +103,12 @@
 
     <footer class="pb-8 md:pb-12 animate-fade-in" style="animation-delay: 0.6s" role="contentinfo">
       <div class="max-w-5xl mx-auto px-6 md:px-8 flex flex-col items-center gap-5">
+        <!-- Site nav -->
+        <nav class="flex items-center gap-4 text-sm tracking-wide">
+          <a href="{{ "projects/" | relLangURL }}"
+             class="text-taupe/70 hover:text-wine transition-colors duration-300">{{ T "projects_title" }}</a>
+        </nav>
+
         <!-- Social + language row -->
         <div class="flex items-center gap-4">
           {{ with .Site.Params.social }}
