@@ -34,5 +34,8 @@ other = "Idea"
 [status_archived]
 other = "Arxivat"
 
+[toggle_theme]
+other = "Canviar tema"
+
 [minor_projects_title]
 other = "Programari lliure i eines que mantenim"

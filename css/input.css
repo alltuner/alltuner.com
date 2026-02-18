@@ -3,11 +3,16 @@
 @source "../content";
 @import "../themes/alltuner-theme/css/theme.css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-wine: #5b2333;
   --color-smoke: #f7f4f3;
   --color-taupe: #928e8d;
   --color-raisin: #2c2826;
+
+  --color-smoke-dark: #141210;
+  --color-raisin-dark: #e8e4e2;
 
   --font-display: "Fraunces Variable", Georgia, serif;
   --font-body: "Instrument Sans Variable", system-ui, sans-serif;
