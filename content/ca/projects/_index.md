@@ -1,4 +1,4 @@
 ---
 title: "Projectes"
-description: "Coses que estem fent."
+description: "Coses que fem."
 ---
