@@ -32,56 +32,40 @@
   {{- $projects := .Site.Params.projects -}}
   {{- $lang := .Language.Lang -}}
 
-  {{- $delay := 0.5 -}}
-  {{ range $status := $statusOrder }}
-    {{- $filtered := where $projects "status" $status -}}
-    {{ if $filtered }}
-    <section class="mb-10 md:mb-14 animate-fade-up" style="animation-delay: {{ $delay }}s">
+  <div class="space-y-0 animate-fade-up" style="animation-delay: 0.5s">
+    {{ range $status := $statusOrder }}
+      {{- $filtered := where $projects "status" $status -}}
       {{- $labelKey := "status_active" -}}
       {{- if eq $status "beta" }}{{ $labelKey = "status_beta" }}{{ end -}}
       {{- if eq $status "developing" }}{{ $labelKey = "status_developing" }}{{ end -}}
       {{- if eq $status "investigation" }}{{ $labelKey = "status_investigation" }}{{ end -}}
       {{- if eq $status "idea" }}{{ $labelKey = "status_idea" }}{{ end -}}
       {{- if eq $status "archived" }}{{ $labelKey = "status_archived" }}{{ end -}}
-
-      <h2 class="text-xs uppercase tracking-widest mb-5
-        {{- if eq $status "active" }} text-wine
-        {{- else if eq $status "beta" }} text-amber-600
-        {{- else if eq $status "developing" }} text-sky-600
-        {{- else if eq $status "investigation" }} text-violet-500
-        {{- else }} text-taupe
-        {{- end -}}
-      ">{{ T $labelKey }}</h2>
-
-      <div class="space-y-0">
-        {{ range $project := $filtered }}
-        <div class="group py-4 border-b border-raisin/[0.06]">
-          <div class="flex items-baseline gap-4">
-            {{ with $project.link }}
-            <a href="{{ . }}" class="font-display text-lg md:text-xl font-light text-raisin hover:text-wine transition-colors duration-300 shrink-0{{ if eq $status "archived" }} line-through decoration-taupe/30{{ end }}">{{ $project.name }}</a>
-            {{ else }}
-            <span class="font-display text-lg md:text-xl font-light text-raisin shrink-0{{ if eq $status "archived" }} line-through decoration-taupe/30{{ end }}">{{ $project.name }}</span>
-            {{ end }}
-            <span class="ml-auto text-[10px] uppercase tracking-wider shrink-0 px-2 py-0.5 rounded-full
-              {{- if eq $status "active" }} text-wine/80 bg-wine/[0.07]
-              {{- else if eq $status "beta" }} text-amber-600/80 bg-amber-600/[0.07]
-              {{- else if eq $status "developing" }} text-sky-600/80 bg-sky-600/[0.07]
-              {{- else if eq $status "investigation" }} text-violet-500/80 bg-violet-500/[0.07]
-              {{- else }} text-taupe/70 bg-taupe/[0.07]
-              {{- end -}}
-            ">{{ T $labelKey }}</span>
-          </div>
-          {{- $descKey := printf "description_%s" $lang -}}
-          {{- $desc := index $project $descKey | default $project.description -}}
-          {{ with $desc }}
-          <p class="text-sm text-taupe mt-1.5 max-w-[85%] leading-relaxed">{{ . }}</p>
+      {{ range $project := $filtered }}
+      <div class="group py-4 border-b border-raisin/[0.06]">
+        <div class="flex items-baseline gap-4">
+          {{ with $project.link }}
+          <a href="{{ . }}" class="font-display text-lg md:text-xl font-light text-raisin hover:text-wine transition-colors duration-300 shrink-0{{ if eq $status "archived" }} line-through decoration-taupe/30{{ end }}">{{ $project.name }}</a>
+          {{ else }}
+          <span class="font-display text-lg md:text-xl font-light text-raisin shrink-0{{ if eq $status "archived" }} line-through decoration-taupe/30{{ end }}">{{ $project.name }}</span>
           {{ end }}
+          <span class="ml-auto text-[10px] uppercase tracking-wider shrink-0 px-2 py-0.5 rounded-full
+            {{- if eq $status "active" }} text-wine/80 bg-wine/[0.07]
+            {{- else if eq $status "beta" }} text-amber-600/80 bg-amber-600/[0.07]
+            {{- else if eq $status "developing" }} text-sky-600/80 bg-sky-600/[0.07]
+            {{- else if eq $status "investigation" }} text-violet-500/80 bg-violet-500/[0.07]
+            {{- else }} text-taupe/70 bg-taupe/[0.07]
+            {{- end -}}
+          ">{{ T $labelKey }}</span>
         </div>
+        {{- $descKey := printf "description_%s" $lang -}}
+        {{- $desc := index $project $descKey | default $project.description -}}
+        {{ with $desc }}
+        <p class="text-sm text-taupe mt-1.5 max-w-[85%] leading-relaxed">{{ . }}</p>
         {{ end }}
       </div>
-    </section>
-    {{- $delay = add $delay 0.1 -}}
+      {{ end }}
     {{ end }}
-  {{ end }}
+  </div>
 </main>
 {{ end }}
