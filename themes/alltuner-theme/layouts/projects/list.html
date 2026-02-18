@@ -70,11 +70,11 @@
   <div class="mt-8 md:mt-10 flex justify-center" aria-hidden="true">
     <div class="h-px w-24 bg-gradient-to-r from-transparent via-wine/50 to-transparent"></div>
   </div>
-  <div class="mt-8 md:mt-10 animate-fade-up" style="animation-delay: 0.6s">
+  <div class="mt-8 md:mt-10 text-center animate-fade-up" style="animation-delay: 0.6s">
     <h2 class="text-xs uppercase tracking-widest text-taupe/60 mb-4">{{ T "minor_projects_title" }}</h2>
     <div class="space-y-1.5">
       {{- range . }}
-      <div class="flex items-baseline gap-2">
+      <div class="flex items-baseline justify-center gap-2">
         <a href="{{ .link }}" class="text-sm text-taupe/70 hover:text-wine transition-colors duration-300">{{ .name }}</a>
         {{ with .description }}<span class="text-xs text-taupe/70">&mdash; {{ . }}</span>{{ end }}
       </div>
