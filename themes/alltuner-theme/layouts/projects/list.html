@@ -7,7 +7,12 @@
     <a href="{{ "/" | relLangURL }}" class="animate-scale-in">
       <img src="/statics/img/all-tuner-logo.svg"
            alt="{{ .Site.Title }} Logo"
-           class="h-16 w-auto md:h-24 drop-shadow-sm dark:brightness-150 dark:contrast-90"
+           class="h-16 w-auto md:h-24 drop-shadow-sm dark:hidden"
+           width="1024"
+           height="1024" />
+      <img src="/statics/img/all-tuner-logo-dark.svg"
+           alt="{{ .Site.Title }} Logo"
+           class="h-16 w-auto md:h-24 drop-shadow-sm hidden dark:block"
            width="1024"
            height="1024" />
     </a>
@@ -48,11 +53,11 @@
           <span class="font-display text-lg md:text-xl font-light text-raisin dark:text-raisin-dark shrink-0{{ if eq $status "archived" }} line-through decoration-taupe/30{{ end }}">{{ $project.name }}</span>
           {{ end }}
           <span class="ml-auto text-[10px] uppercase tracking-wider shrink-0 px-2 py-0.5 rounded-full
-            {{- if eq $status "active" }} text-wine/80 bg-wine/[0.07]
-            {{- else if eq $status "beta" }} text-amber-600/80 bg-amber-600/[0.07]
-            {{- else if eq $status "developing" }} text-sky-600/80 bg-sky-600/[0.07]
-            {{- else if eq $status "investigation" }} text-violet-500/80 bg-violet-500/[0.07]
-            {{- else }} text-taupe/70 bg-taupe/[0.07]
+            {{- if eq $status "active" }} text-wine/80 dark:text-wine-light bg-wine/[0.07] dark:bg-wine-light/[0.12]
+            {{- else if eq $status "beta" }} text-amber-600/80 dark:text-amber-400 bg-amber-600/[0.07] dark:bg-amber-400/[0.12]
+            {{- else if eq $status "developing" }} text-sky-600/80 dark:text-sky-400 bg-sky-600/[0.07] dark:bg-sky-400/[0.12]
+            {{- else if eq $status "investigation" }} text-violet-500/80 dark:text-violet-400 bg-violet-500/[0.07] dark:bg-violet-400/[0.12]
+            {{- else }} text-taupe/70 dark:text-taupe/90 bg-taupe/[0.07] dark:bg-taupe/[0.12]
             {{- end -}}
           ">{{ T $labelKey }}</span>
         </div>
