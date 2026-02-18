@@ -122,7 +122,7 @@
             {{- range $i, $lang := .Site.Languages -}}
             {{- if $i }} <span class="text-taupe/25">/</span> {{ end -}}
             {{- if eq $lang.Lang $.Language.Lang -}}
-            <span class="text-raisin/70 font-medium uppercase">{{ $lang.Lang }}</span>
+            <span class="text-raisin/70 dark:text-raisin-dark/70 font-medium uppercase">{{ $lang.Lang }}</span>
             {{- else -}}
             <a href="{{ with $.Translations }}{{ range . }}{{ if eq .Language.Lang $lang.Lang }}{{ .RelPermalink }}{{ end }}{{ end }}{{ else }}/{{ $lang.Lang }}/{{ end }}"
                class="text-taupe/60 hover:text-wine transition-colors duration-300 uppercase">{{ $lang.Lang }}</a>
@@ -141,7 +141,7 @@
         </div>
 
         <!-- Credits -->
-        <p class="text-xs text-taupe/60 text-center">
+        <p class="text-xs text-taupe/60 dark:text-taupe/70 text-center">
           {{ T "founded_by" }}
           <a href="{{ T "founder_url" }}"
              class="text-taupe hover:text-wine transition-colors duration-300 underline decoration-taupe/20 underline-offset-2 hover:decoration-wine/40">David Poblador i Garcia</a>

@@ -12,12 +12,12 @@
            height="1024" />
     </a>
 
-    <h1 class="mt-10 md:mt-14 font-display text-2xl md:text-4xl lg:text-5xl text-raisin font-light leading-tight tracking-tight animate-fade-up" style="animation-delay: 0.15s">
+    <h1 class="mt-10 md:mt-14 font-display text-2xl md:text-4xl lg:text-5xl text-raisin dark:text-raisin-dark font-light leading-tight tracking-tight animate-fade-up" style="animation-delay: 0.15s">
       {{ .Title }}
     </h1>
 
     {{ with .Description }}
-    <p class="mt-4 md:mt-6 text-base md:text-lg text-taupe font-normal max-w-lg animate-fade-up" style="animation-delay: 0.25s">
+    <p class="mt-4 md:mt-6 text-base md:text-lg text-taupe dark:text-taupe/90 font-normal max-w-lg animate-fade-up" style="animation-delay: 0.25s">
       {{ . }}
     </p>
     {{ end }}
@@ -59,7 +59,7 @@
         {{- $descKey := printf "description_%s" $lang -}}
         {{- $desc := index $project $descKey | default $project.description -}}
         {{ with $desc }}
-        <p class="text-sm text-taupe mt-1.5 max-w-[85%] leading-relaxed">{{ . }}</p>
+        <p class="text-sm text-taupe dark:text-taupe/90 mt-1.5 max-w-[85%] leading-relaxed">{{ . }}</p>
         {{ end }}
       </div>
     {{ end }}
@@ -71,12 +71,12 @@
     <div class="h-px w-24 bg-gradient-to-r from-transparent via-wine/50 to-transparent"></div>
   </div>
   <div class="mt-8 md:mt-10 flex flex-col items-center animate-fade-up" style="animation-delay: 0.6s">
-    <h2 class="text-xs uppercase tracking-widest text-taupe/60 mb-4">{{ T "minor_projects_title" }}</h2>
+    <h2 class="text-xs uppercase tracking-widest text-taupe/60 dark:text-taupe/70 mb-4">{{ T "minor_projects_title" }}</h2>
     <table class="border-collapse">
       {{- range . }}
       <tr>
-        <td class="py-0.5 pr-3 text-sm text-right"><a href="{{ .link }}" class="text-taupe/70 hover:text-wine transition-colors duration-300">{{ .name }}</a></td>
-        {{ with .description }}<td class="py-0.5 pl-3 text-xs text-taupe/70 text-left">{{ . }}</td>{{ end }}
+        <td class="py-0.5 pr-3 text-sm text-right"><a href="{{ .link }}" class="text-taupe/70 dark:text-taupe/80 hover:text-wine transition-colors duration-300">{{ .name }}</a></td>
+        {{ with .description }}<td class="py-0.5 pl-3 text-xs text-taupe/70 dark:text-taupe/80 text-left">{{ . }}</td>{{ end }}
       </tr>
       {{- end }}
     </table>

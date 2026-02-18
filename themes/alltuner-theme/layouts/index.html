@@ -14,13 +14,13 @@
 
     <!-- Main tagline -->
     <div class="mt-12 md:mt-16 max-w-2xl animate-fade-up" style="animation-delay: 0.15s">
-      <p class="font-display text-2xl md:text-4xl lg:text-5xl text-raisin font-light leading-tight tracking-tight text-balance">
+      <p class="font-display text-2xl md:text-4xl lg:text-5xl text-raisin dark:text-raisin-dark font-light leading-tight tracking-tight text-balance">
         {{ .Params.tagline | safeHTML }}
       </p>
     </div>
 
     <!-- Subtitle -->
-    <p class="mt-6 md:mt-8 text-base md:text-lg text-taupe font-normal max-w-lg animate-fade-up" style="animation-delay: 0.3s">
+    <p class="mt-6 md:mt-8 text-base md:text-lg text-taupe dark:text-taupe/90 font-normal max-w-lg animate-fade-up" style="animation-delay: 0.3s">
       {{ .Params.subtitle }}<br>{{ .Params.subtitle2 }}
     </p>
 
