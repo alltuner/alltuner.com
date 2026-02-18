@@ -84,7 +84,8 @@
           data-website-id="{{ . }}"></script>
   {{- end }}
 </head>
-<body class="bg-smoke dark:bg-smoke-dark text-raisin dark:text-raisin-dark overflow-x-hidden min-h-screen antialiased selection-wine relative transition-colors duration-300">
+<body class="bg-wine text-raisin dark:text-raisin-dark overflow-x-hidden antialiased selection-wine relative transition-colors duration-300 flex flex-col min-h-screen">
+  <div class="bg-smoke dark:bg-smoke-dark flex-1 relative">
   <!-- Noise texture overlay -->
   <div class="fixed inset-0 bg-noise opacity-[0.03] pointer-events-none z-50" aria-hidden="true"></div>
 
@@ -150,6 +151,7 @@
         </p>
       </div>
     </footer>
+  </div>
   </div>
 
   {{- $js := resources.Get "js/main.js" -}}
