@@ -162,7 +162,6 @@
       </div>
     </footer>
   </div>
-  </div>
 
   {{- $js := resources.Get "js/main.js" -}}
   <script src="{{ $js.RelPermalink }}?v={{ $js.Content | md5 }}" type="module"></script>
@@ -190,5 +189,6 @@
       });
     })();
   </script>
+  </div>
 </body>
 </html>
