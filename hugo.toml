@@ -146,7 +146,6 @@ name = "DevTuner"
 description = "Engineering team health platform with practical insights, by engineers, for engineers."
 description_ca = "Plataforma de salut d'equips d'enginyeria amb consells pràctics, d'enginyers per a enginyers."
 description_es = "Plataforma de salud de equipos de ingeniería con consejos prácticos, de ingenieros para ingenieros."
-link = "https://devtuner.com"
 status = "idea"
 
 # Minor projects
