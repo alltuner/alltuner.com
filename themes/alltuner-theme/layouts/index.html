@@ -26,7 +26,11 @@
 
     <!-- Projects link -->
     <a href="{{ "projects/" | relLangURL }}"
-       class="mt-6 md:mt-8 text-sm text-taupe/70 hover:text-wine transition-colors duration-300 animate-fade-up" style="animation-delay: 0.4s">{{ T "projects_title" }} &rarr;</a>
+       class="group mt-8 md:mt-10 inline-flex items-center gap-2 px-6 py-2.5 text-sm tracking-wide text-wine/80 border border-wine/15 rounded-full bg-wine/[0.03] hover:bg-wine/[0.08] hover:border-wine/25 hover:text-wine transition-all duration-300 animate-fade-up"
+       style="animation-delay: 0.4s">
+      {{ T "projects_title" }}
+      <span class="transition-transform duration-300 group-hover:translate-x-0.5">&rarr;</span>
+    </a>
 
     <!-- Decorative line -->
     <div class="mt-12 md:mt-16 h-px w-24 bg-gradient-to-r from-transparent via-wine/50 to-transparent origin-center animate-draw-line" style="animation-delay: 0.5s" aria-hidden="true"></div>
