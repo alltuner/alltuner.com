@@ -99,3 +99,34 @@ knowsAbout = [
   "FastAPI applications",
   "Docker and DevOps",
 ]
+
+# Projects
+[[params.projects]]
+name = "VibeTuner"
+description = "Production-ready FastAPI project scaffolding in seconds."
+description_ca = "Bastides de projectes FastAPI llestes per a producció en segons."
+description_es = "Andamiaje de proyectos FastAPI listo para producción en segundos."
+link = "https://vibetuner.alltuner.com"
+status = "active"
+
+[[params.projects]]
+name = "Castuner"
+description = "Smart podcast distribution and analytics platform."
+description_ca = "Plataforma intel·ligent de distribució i analítica de podcasts."
+description_es = "Plataforma inteligente de distribución y analítica de podcasts."
+link = "https://castuner.com"
+status = "active"
+
+[[params.projects]]
+name = "Shiftuner"
+description = "Lean scheduling and shift management for small teams."
+description_ca = "Gestió lleugera d'horaris i torns per a equips petits."
+description_es = "Gestión ligera de horarios y turnos para equipos pequeños."
+status = "beta"
+
+[[params.projects]]
+name = "Cliptuner"
+description = "AI-assisted video clipping for podcasters and creators."
+description_ca = "Retall de vídeo assistit per IA per a podcasters i creadors."
+description_es = "Recorte de vídeo asistido por IA para podcasters y creadores."
+status = "idea"

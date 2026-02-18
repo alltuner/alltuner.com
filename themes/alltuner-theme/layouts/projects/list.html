@@ -1,0 +1,84 @@
+{{ define "title" }}{{ .Title }} &mdash; {{ .Site.Title }}{{ end }}
+
+{{ define "content" }}
+<header class="flex items-center justify-center">
+  <div class="max-w-3xl mx-auto px-6 md:px-8 pt-20 md:pt-28 pb-8 md:pb-12 flex flex-col items-center text-center">
+    <!-- Logo -->
+    <a href="{{ "/" | relLangURL }}" class="animate-scale-in">
+      <img src="/statics/img/all-tuner-logo.svg"
+           alt="{{ .Site.Title }} Logo"
+           class="h-16 w-auto md:h-24 drop-shadow-sm"
+           width="1024"
+           height="1024" />
+    </a>
+
+    <h1 class="mt-10 md:mt-14 font-display text-2xl md:text-4xl lg:text-5xl text-raisin font-light leading-tight tracking-tight animate-fade-up" style="animation-delay: 0.15s">
+      {{ .Title }}
+    </h1>
+
+    {{ with .Description }}
+    <p class="mt-4 md:mt-6 text-base md:text-lg text-taupe font-normal max-w-lg animate-fade-up" style="animation-delay: 0.25s">
+      {{ . }}
+    </p>
+    {{ end }}
+
+    <!-- Decorative line -->
+    <div class="mt-8 md:mt-10 h-px w-24 bg-gradient-to-r from-transparent via-wine/50 to-transparent origin-center animate-draw-line" style="animation-delay: 0.4s" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main id="main" role="main" class="w-full max-w-3xl mx-auto px-6 md:px-8 pb-16 md:pb-24">
+  {{- $statusOrder := slice "active" "beta" "proof of concept" "idea" "archived" -}}
+  {{- $projects := .Site.Params.projects -}}
+  {{- $lang := .Language.Lang -}}
+
+  {{- $delay := 0.5 -}}
+  {{ range $status := $statusOrder }}
+    {{- $filtered := where $projects "status" $status -}}
+    {{ if $filtered }}
+    <section class="mb-10 md:mb-14 animate-fade-up" style="animation-delay: {{ $delay }}s">
+      {{- $labelKey := "status_active" -}}
+      {{- if eq $status "beta" }}{{ $labelKey = "status_beta" }}{{ end -}}
+      {{- if eq $status "proof of concept" }}{{ $labelKey = "status_poc" }}{{ end -}}
+      {{- if eq $status "idea" }}{{ $labelKey = "status_idea" }}{{ end -}}
+      {{- if eq $status "archived" }}{{ $labelKey = "status_archived" }}{{ end -}}
+
+      <h2 class="text-xs uppercase tracking-widest mb-5
+        {{- if eq $status "active" }} text-wine
+        {{- else if eq $status "beta" }} text-amber-600
+        {{- else if eq $status "proof of concept" }} text-violet-500
+        {{- else }} text-taupe
+        {{- end -}}
+      ">{{ T $labelKey }}</h2>
+
+      <div class="space-y-0">
+        {{ range $project := $filtered }}
+        <div class="group py-4 border-b border-raisin/[0.06]">
+          <div class="flex items-baseline gap-4">
+            {{ with $project.link }}
+            <a href="{{ . }}" class="font-display text-lg md:text-xl font-light text-raisin hover:text-wine transition-colors duration-300 shrink-0{{ if eq $status "archived" }} line-through decoration-taupe/30{{ end }}">{{ $project.name }}</a>
+            {{ else }}
+            <span class="font-display text-lg md:text-xl font-light text-raisin shrink-0{{ if eq $status "archived" }} line-through decoration-taupe/30{{ end }}">{{ $project.name }}</span>
+            {{ end }}
+            <span class="ml-auto text-[10px] uppercase tracking-wider shrink-0 px-2 py-0.5 rounded-full
+              {{- if eq $status "active" }} text-wine/80 bg-wine/[0.07]
+              {{- else if eq $status "beta" }} text-amber-600/80 bg-amber-600/[0.07]
+              {{- else if eq $status "proof of concept" }} text-violet-500/80 bg-violet-500/[0.07]
+              {{- else }} text-taupe/70 bg-taupe/[0.07]
+              {{- end -}}
+            ">{{ T $labelKey }}</span>
+          </div>
+          {{- $descKey := printf "description_%s" $lang -}}
+          {{- $desc := index $project $descKey | default $project.description -}}
+          {{ with $desc }}
+          <p class="text-sm text-taupe mt-1.5 max-w-[85%] leading-relaxed">{{ . }}</p>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </section>
+    {{- $delay = add $delay 0.1 -}}
+    {{ end }}
+  {{ end }}
+</main>
+{{ end }}

@@ -12,3 +12,21 @@ other = "https://poblador.cat"
 
 [location]
 other = "Barcelona"
+
+[projects_title]
+other = "Projectes"
+
+[status_active]
+other = "Actiu"
+
+[status_beta]
+other = "Beta"
+
+[status_poc]
+other = "Prova de concepte"
+
+[status_idea]
+other = "Idea"
+
+[status_archived]
+other = "Arxivat"
