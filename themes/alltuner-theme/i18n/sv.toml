@@ -1,0 +1,44 @@
+[language_label]
+other = "Språk"
+
+[social_links_label]
+other = "Sociala länkar"
+
+[founded_by]
+other = "Grundat av"
+
+[founder_url]
+other = "https://davidpoblador.com"
+
+[location]
+other = "Barcelona"
+
+[projects_title]
+other = "Projekt"
+
+[status_active]
+other = "Aktiv"
+
+[status_beta]
+other = "Beta"
+
+[status_developing]
+other = "Under utveckling"
+
+[status_investigation]
+other = "Undersökning"
+
+[status_idea]
+other = "Idé"
+
+[status_archived]
+other = "Arkiverad"
+
+[toggle_theme]
+other = "Byt tema"
+
+[home_title]
+other = "Hem"
+
+[minor_projects_title]
+other = "Fri programvara och verktyg vi underhåller"
