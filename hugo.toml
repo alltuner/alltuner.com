@@ -100,7 +100,31 @@ knowsAbout = [
   "Docker and DevOps",
 ]
 
-# Projects
+# Projects (order here controls display order)
+[[params.projects]]
+name = "Radar de la Música"
+description = "Curated directory of music innovation projects in Barcelona, with Barcelona Music Lab."
+description_ca = "Directori de projectes d'innovació musical a Barcelona, amb Barcelona Music Lab."
+description_es = "Directorio de proyectos de innovación musical en Barcelona, con Barcelona Music Lab."
+link = "https://bcnmusiclab.com/en/2025/10/23/radar-de-la-musica-a-new-strategic-tool-to-map-music-innovation-connected-to-barcelona/"
+status = "developing"
+
+[[params.projects]]
+name = "Shiftuner"
+description = "Privacy-first time tracking for Spanish labor law compliance."
+description_ca = "Control horari respectuós amb la privadesa per complir la normativa laboral espanyola."
+description_es = "Control horario respetuoso con la privacidad para cumplir la normativa laboral española."
+link = "https://shiftuner.com"
+status = "beta"
+
+[[params.projects]]
+name = "Castuner"
+description = "AI-powered podcast platform for transcription, summarization, and video clip creation."
+description_ca = "Plataforma de podcasts amb IA per a transcripció, resum i creació de clips de vídeo."
+description_es = "Plataforma de podcasts con IA para transcripción, resumen y creación de clips de vídeo."
+link = "https://castuner.com"
+status = "investigation"
+
 [[params.projects]]
 name = "VibeTuner"
 description = "Production-ready FastAPI scaffolding with flexible databases, HTMX frontend, and Docker deployment."
@@ -118,30 +142,6 @@ link = "https://a-clapar.cat"
 status = "active"
 
 [[params.projects]]
-name = "Shiftuner"
-description = "Privacy-first time tracking for Spanish labor law compliance."
-description_ca = "Control horari respectuós amb la privadesa per complir la normativa laboral espanyola."
-description_es = "Control horario respetuoso con la privacidad para cumplir la normativa laboral española."
-link = "https://shiftuner.com"
-status = "beta"
-
-[[params.projects]]
-name = "Radar de la Música"
-description = "Curated directory of music innovation projects in Barcelona, with Barcelona Music Lab."
-description_ca = "Directori de projectes d'innovació musical a Barcelona, amb Barcelona Music Lab."
-description_es = "Directorio de proyectos de innovación musical en Barcelona, con Barcelona Music Lab."
-link = "https://bcnmusiclab.com/en/2025/10/23/radar-de-la-musica-a-new-strategic-tool-to-map-music-innovation-connected-to-barcelona/"
-status = "developing"
-
-[[params.projects]]
-name = "Castuner"
-description = "AI-powered podcast platform for transcription, summarization, and video clip creation."
-description_ca = "Plataforma de podcasts amb IA per a transcripció, resum i creació de clips de vídeo."
-description_es = "Plataforma de podcasts con IA para transcripción, resumen y creación de clips de vídeo."
-link = "https://castuner.com"
-status = "investigation"
-
-[[params.projects]]
 name = "DevTuner"
 description = "Engineering team health platform with practical insights, by engineers, for engineers."
 description_ca = "Plataforma de salut d'equips d'enginyeria amb consells pràctics, d'enginyers per a enginyers."
@@ -151,16 +151,20 @@ status = "idea"
 # Minor projects
 [[params.minor_projects]]
 name = "cookietuner"
+description = "Extract and display cookies from macOS browsers."
 link = "https://github.com/alltuner/cookietuner"
 
 [[params.minor_projects]]
 name = "vaultuner"
+description = "Human-readable secrets for Bitwarden Secrets Manager."
 link = "https://github.com/alltuner/vaultuner"
 
 [[params.minor_projects]]
 name = "mise-completions-sync"
+description = "Auto-sync shell completions for tools managed by mise."
 link = "https://github.com/alltuner/mise-completions-sync"
 
 [[params.minor_projects]]
 name = "projectuner"
+description = "Copier template for git bare repo + worktree projects."
 link = "https://github.com/alltuner/projectuner"

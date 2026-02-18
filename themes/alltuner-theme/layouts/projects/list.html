@@ -28,21 +28,19 @@
 </header>
 
 <main id="main" role="main" class="w-full max-w-3xl mx-auto px-6 md:px-8 pb-16 md:pb-24">
-  {{- $statusOrder := slice "active" "beta" "developing" "investigation" "idea" "archived" -}}
   {{- $projects := .Site.Params.projects -}}
   {{- $lang := .Language.Lang -}}
 
   <div class="space-y-0 animate-fade-up" style="animation-delay: 0.5s">
-    {{ range $status := $statusOrder }}
-      {{- $filtered := where $projects "status" $status -}}
+    {{ range $project := $projects }}
+      {{- $status := $project.status -}}
       {{- $labelKey := "status_active" -}}
       {{- if eq $status "beta" }}{{ $labelKey = "status_beta" }}{{ end -}}
       {{- if eq $status "developing" }}{{ $labelKey = "status_developing" }}{{ end -}}
       {{- if eq $status "investigation" }}{{ $labelKey = "status_investigation" }}{{ end -}}
       {{- if eq $status "idea" }}{{ $labelKey = "status_idea" }}{{ end -}}
       {{- if eq $status "archived" }}{{ $labelKey = "status_archived" }}{{ end -}}
-      {{ range $project := $filtered }}
-      <div class="group py-4 border-b border-raisin/[0.06]">
+      <div class="group py-4 border-b border-raisin/[0.06] last:border-b-0">
         <div class="flex items-baseline gap-4">
           {{ with $project.link }}
           <a href="{{ . }}" class="font-display text-lg md:text-xl font-light text-raisin hover:text-wine transition-colors duration-300 shrink-0{{ if eq $status "archived" }} line-through decoration-taupe/30{{ end }}">{{ $project.name }}</a>
@@ -64,7 +62,6 @@
         <p class="text-sm text-taupe mt-1.5 max-w-[85%] leading-relaxed">{{ . }}</p>
         {{ end }}
       </div>
-      {{ end }}
     {{ end }}
   </div>
 
@@ -75,9 +72,12 @@
   </div>
   <div class="mt-8 md:mt-10 animate-fade-up" style="animation-delay: 0.6s">
     <h2 class="text-xs uppercase tracking-widest text-taupe/60 mb-4">{{ T "minor_projects_title" }}</h2>
-    <div class="flex flex-wrap gap-x-6 gap-y-2">
+    <div class="space-y-1.5">
       {{- range . }}
-      <a href="{{ .link }}" class="text-sm text-taupe/70 hover:text-wine transition-colors duration-300">{{ .name }}</a>
+      <div class="flex items-baseline gap-2">
+        <a href="{{ .link }}" class="text-sm text-taupe/70 hover:text-wine transition-colors duration-300">{{ .name }}</a>
+        {{ with .description }}<span class="text-xs text-taupe/40">&mdash; {{ . }}</span>{{ end }}
+      </div>
       {{- end }}
     </div>
   </div>
