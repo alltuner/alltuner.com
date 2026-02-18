@@ -70,7 +70,10 @@
 
   <!-- Minor projects -->
   {{ with .Site.Params.minor_projects }}
-  <div class="mt-16 md:mt-20 pt-8 border-t border-raisin/[0.06] animate-fade-up" style="animation-delay: 0.6s">
+  <div class="mt-8 md:mt-10 flex justify-center" aria-hidden="true">
+    <div class="h-px w-24 bg-gradient-to-r from-transparent via-wine/50 to-transparent"></div>
+  </div>
+  <div class="mt-8 md:mt-10 animate-fade-up" style="animation-delay: 0.6s">
     <h2 class="text-xs uppercase tracking-widest text-taupe/60 mb-4">{{ T "minor_projects_title" }}</h2>
     <div class="flex flex-wrap gap-x-6 gap-y-2">
       {{- range . }}
