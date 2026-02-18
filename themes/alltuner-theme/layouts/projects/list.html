@@ -3,15 +3,8 @@
 {{ define "content" }}
 <header class="flex items-center justify-center">
   <div class="max-w-3xl mx-auto px-6 md:px-8 pt-20 md:pt-28 pb-8 md:pb-12 flex flex-col items-center text-center">
-    <!-- Back link -->
-    <a href="{{ "/" | relLangURL }}"
-       class="group inline-flex items-center gap-1.5 text-sm text-taupe/60 hover:text-wine transition-colors duration-300 animate-fade-in">
-      <span class="transition-transform duration-300 group-hover:-translate-x-0.5">&larr;</span>
-      {{ .Site.Title }}
-    </a>
-
     <!-- Logo -->
-    <a href="{{ "/" | relLangURL }}" class="mt-6 animate-scale-in">
+    <a href="{{ "/" | relLangURL }}" class="animate-scale-in">
       <img src="/statics/img/all-tuner-logo.svg"
            alt="{{ .Site.Title }} Logo"
            class="h-16 w-auto md:h-24 drop-shadow-sm"
