@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "fonts": "mkdir -p static/fonts && cp node_modules/@fontsource-variable/fraunces/files/*-wght-*.woff2 static/fonts/ && cp node_modules/@fontsource-variable/instrument-sans/files/*-wght-*.woff2 static/fonts/",
-    "css:build": "bunx @tailwindcss/cli -i css/input.css -o assets/css/style.css --minify",
-    "css:watch": "bunx @tailwindcss/cli -i css/input.css -o assets/css/style.css --watch=always",
+    "css:build": "bunx @tailwindcss/cli@4.1.18 -i css/input.css -o assets/css/style.css --minify",
+    "css:watch": "bunx @tailwindcss/cli@4.1.18 -i css/input.css -o assets/css/style.css --watch=always",
     "js:build": "bun build themes/alltuner-theme/js/main.js --outdir assets/js --minify",
     "js:watch": "bun build themes/alltuner-theme/js/main.js --outdir assets/js --watch",
     "clean": "rm -rf public",
@@ -17,8 +17,8 @@
   "dependencies": {
     "@fontsource-variable/fraunces": "^5.2.9",
     "@fontsource-variable/instrument-sans": "^5.2.8",
-    "@tailwindcss/cli": "^4.1.18",
+    "@tailwindcss/cli": "4.1.18",
     "instant.page": "^5.2.0",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "4.1.18"
   }
 }
