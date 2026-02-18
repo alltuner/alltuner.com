@@ -28,7 +28,7 @@
 </header>
 
 <main id="main" role="main" class="w-full max-w-3xl mx-auto px-6 md:px-8 pb-16 md:pb-24">
-  {{- $statusOrder := slice "active" "beta" "proof of concept" "idea" "archived" -}}
+  {{- $statusOrder := slice "active" "beta" "developing" "investigation" "idea" "archived" -}}
   {{- $projects := .Site.Params.projects -}}
   {{- $lang := .Language.Lang -}}
 
@@ -39,14 +39,16 @@
     <section class="mb-10 md:mb-14 animate-fade-up" style="animation-delay: {{ $delay }}s">
       {{- $labelKey := "status_active" -}}
       {{- if eq $status "beta" }}{{ $labelKey = "status_beta" }}{{ end -}}
-      {{- if eq $status "proof of concept" }}{{ $labelKey = "status_poc" }}{{ end -}}
+      {{- if eq $status "developing" }}{{ $labelKey = "status_developing" }}{{ end -}}
+      {{- if eq $status "investigation" }}{{ $labelKey = "status_investigation" }}{{ end -}}
       {{- if eq $status "idea" }}{{ $labelKey = "status_idea" }}{{ end -}}
       {{- if eq $status "archived" }}{{ $labelKey = "status_archived" }}{{ end -}}
 
       <h2 class="text-xs uppercase tracking-widest mb-5
         {{- if eq $status "active" }} text-wine
         {{- else if eq $status "beta" }} text-amber-600
-        {{- else if eq $status "proof of concept" }} text-violet-500
+        {{- else if eq $status "developing" }} text-sky-600
+        {{- else if eq $status "investigation" }} text-violet-500
         {{- else }} text-taupe
         {{- end -}}
       ">{{ T $labelKey }}</h2>
@@ -63,7 +65,8 @@
             <span class="ml-auto text-[10px] uppercase tracking-wider shrink-0 px-2 py-0.5 rounded-full
               {{- if eq $status "active" }} text-wine/80 bg-wine/[0.07]
               {{- else if eq $status "beta" }} text-amber-600/80 bg-amber-600/[0.07]
-              {{- else if eq $status "proof of concept" }} text-violet-500/80 bg-violet-500/[0.07]
+              {{- else if eq $status "developing" }} text-sky-600/80 bg-sky-600/[0.07]
+              {{- else if eq $status "investigation" }} text-violet-500/80 bg-violet-500/[0.07]
               {{- else }} text-taupe/70 bg-taupe/[0.07]
               {{- end -}}
             ">{{ T $labelKey }}</span>

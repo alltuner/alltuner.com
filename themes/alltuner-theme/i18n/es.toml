@@ -22,8 +22,11 @@ other = "Activo"
 [status_beta]
 other = "Beta"
 
-[status_poc]
-other = "Prueba de concepto"
+[status_developing]
+other = "En desarrollo"
+
+[status_investigation]
+other = "Investigación"
 
 [status_idea]
 other = "Idea"
