@@ -13,6 +13,9 @@ other = "https://poblador.cat"
 [location]
 other = "Barcelona"
 
+[in_location]
+other = "a Barcelona"
+
 [projects_title]
 other = "Projectes"
 

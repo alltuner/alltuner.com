@@ -13,6 +13,9 @@ other = "https://davidpoblador.com"
 [location]
 other = "Barcelona"
 
+[in_location]
+other = "in Barcelona"
+
 [projects_title]
 other = "Projects"
 
