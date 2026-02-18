@@ -12,3 +12,27 @@ other = "https://davidpoblador.com"
 
 [location]
 other = "Barcelona"
+
+[projects_title]
+other = "Projects"
+
+[status_active]
+other = "Active"
+
+[status_beta]
+other = "Beta"
+
+[status_developing]
+other = "Developing"
+
+[status_investigation]
+other = "Investigation"
+
+[status_idea]
+other = "Idea"
+
+[status_archived]
+other = "Archived"
+
+[minor_projects_title]
+other = "Free software & tools we maintain"
