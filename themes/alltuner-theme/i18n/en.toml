@@ -37,5 +37,8 @@ other = "Archived"
 [toggle_theme]
 other = "Toggle theme"
 
+[home_title]
+other = "Home"
+
 [minor_projects_title]
 other = "Free software & tools we maintain"
