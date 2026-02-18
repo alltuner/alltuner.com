@@ -1,4 +1,4 @@
 ---
 title: "Projectes"
-description: "Coses que estem construint i hem construït."
+description: "Coses en què estem involucrats."
 ---

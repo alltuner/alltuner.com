@@ -1,4 +1,4 @@
 ---
 title: "Proyectos"
-description: "Cosas que estamos construyendo y hemos construido."
+description: "Cosas en las que estamos involucrados."
 ---
