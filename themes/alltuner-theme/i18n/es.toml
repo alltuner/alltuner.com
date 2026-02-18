@@ -37,5 +37,8 @@ other = "Archivado"
 [toggle_theme]
 other = "Cambiar tema"
 
+[home_title]
+other = "Inicio"
+
 [minor_projects_title]
 other = "Software libre y herramientas que mantenemos"

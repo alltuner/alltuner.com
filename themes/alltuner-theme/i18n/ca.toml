@@ -37,5 +37,8 @@ other = "Arxivat"
 [toggle_theme]
 other = "Canviar tema"
 
+[home_title]
+other = "Inici"
+
 [minor_projects_title]
 other = "Programari lliure i eines que mantenim"
