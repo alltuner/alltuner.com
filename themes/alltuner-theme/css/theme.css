@@ -83,4 +83,16 @@
     background-color: var(--color-wine);
     color: var(--color-smoke);
   }
+
+  .dark .selection-wine::selection {
+    color: var(--color-smoke-dark);
+  }
+
+  .dark .gradient-radial {
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--color-wine) 0%, transparent 60%);
+  }
+
+  .dark .gradient-bottom {
+    background: radial-gradient(ellipse 70% 50% at 50% 100%, var(--color-taupe) 0%, transparent 50%);
+  }
 }

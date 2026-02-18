@@ -34,5 +34,8 @@ other = "Idea"
 [status_archived]
 other = "Archivado"
 
+[toggle_theme]
+other = "Cambiar tema"
+
 [minor_projects_title]
 other = "Software libre y herramientas que mantenemos"

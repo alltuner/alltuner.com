@@ -5,7 +5,12 @@
     <div class="animate-scale-in">
       <img src="/statics/img/all-tuner-logo.svg"
            alt="{{ .Site.Title }} Logo"
-           class="h-28 w-auto md:h-56 drop-shadow-sm"
+           class="h-28 w-auto md:h-56 drop-shadow-sm dark:hidden"
+           width="1024"
+           height="1024" />
+      <img src="/statics/img/all-tuner-logo-dark.svg"
+           alt="{{ .Site.Title }} Logo"
+           class="h-28 w-auto md:h-56 drop-shadow-sm hidden dark:block"
            width="1024"
            height="1024" />
     </div>
@@ -14,19 +19,19 @@
 
     <!-- Main tagline -->
     <div class="mt-12 md:mt-16 max-w-2xl animate-fade-up" style="animation-delay: 0.15s">
-      <p class="font-display text-2xl md:text-4xl lg:text-5xl text-raisin font-light leading-tight tracking-tight text-balance">
+      <p class="font-display text-2xl md:text-4xl lg:text-5xl text-raisin dark:text-raisin-dark font-light leading-tight tracking-tight text-balance">
         {{ .Params.tagline | safeHTML }}
       </p>
     </div>
 
     <!-- Subtitle -->
-    <p class="mt-6 md:mt-8 text-base md:text-lg text-taupe font-normal max-w-lg animate-fade-up" style="animation-delay: 0.3s">
+    <p class="mt-6 md:mt-8 text-base md:text-lg text-taupe dark:text-taupe/90 font-normal max-w-lg animate-fade-up" style="animation-delay: 0.3s">
       {{ .Params.subtitle }}<br>{{ .Params.subtitle2 }}
     </p>
 
     <!-- Projects link -->
     <a href="{{ "projects/" | relLangURL }}"
-       class="group mt-8 md:mt-10 inline-flex items-center gap-2 px-6 py-2.5 text-sm tracking-wide text-wine/80 border border-wine/15 rounded-full bg-wine/[0.03] hover:bg-wine/[0.08] hover:border-wine/25 hover:text-wine transition-all duration-300 animate-fade-up"
+       class="group mt-8 md:mt-10 inline-flex items-center gap-2 px-6 py-2.5 text-sm tracking-wide text-wine/80 dark:text-wine-light border border-wine/15 dark:border-wine-light/30 rounded-full bg-wine/[0.03] dark:bg-wine-light/[0.1] hover:bg-wine/[0.08] dark:hover:bg-wine-light/[0.18] hover:border-wine/25 dark:hover:border-wine-light/40 hover:text-wine dark:hover:text-wine-light transition-all duration-300 animate-fade-up"
        style="animation-delay: 0.4s">
       {{ T "projects_title" }}
       <span class="transition-transform duration-300 group-hover:translate-x-0.5">&rarr;</span>
