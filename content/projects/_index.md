@@ -1,4 +1,4 @@
 ---
 title: "Projects"
-description: "What are we up to."
+description: "What we are up to."
 ---
