@@ -22,10 +22,10 @@
       <li>
         <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="text-raisin dark:text-raisin-dark" tabindex="-1">
           {{ if .logoDark }}
-          <img src="/statics/img/logos/{{ .logo }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:hidden" width="120" height="40" loading="lazy">
-          <img src="/statics/img/logos/{{ .logoDark }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale hidden dark:block dark:opacity-30" width="120" height="40" loading="lazy">
+          <img src="/statics/img/logos/{{ .logo }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:hidden" width="120" height="40" loading="eager">
+          <img src="/statics/img/logos/{{ .logoDark }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale hidden dark:block dark:opacity-30" width="120" height="40" loading="eager">
           {{ else }}
-          <img src="/statics/img/logos/{{ .logo }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:invert dark:opacity-30" width="120" height="40" loading="lazy">
+          <img src="/statics/img/logos/{{ .logo }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:invert dark:opacity-30" width="120" height="40" loading="eager">
           {{ end }}
         </a>
       </li>
