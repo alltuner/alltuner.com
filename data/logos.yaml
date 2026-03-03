@@ -52,3 +52,11 @@
   logo: secways-light.png
   logoDark: secways-dark.png
   url: "https://secways.com/"
+
+- name: Modal
+  logo: modal.svg
+  url: "https://modal.com/"
+
+- name: Espai Sonor Català
+  logo: espai-sonor-catala.svg
+  url: "https://www.espaisonor.cat/"
