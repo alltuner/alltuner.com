@@ -25,26 +25,35 @@ import typer
 from PIL import Image
 
 
+def _border_pixels(img: Image.Image) -> list[tuple[int, ...]]:
+    """Sample pixels along the image border."""
+    w, h = img.size
+    pixels: list[tuple[int, ...]] = []
+    for x in range(w):
+        pixels.append(img.getpixel((x, 0)))
+        pixels.append(img.getpixel((x, h - 1)))
+    for y in range(h):
+        pixels.append(img.getpixel((0, y)))
+        pixels.append(img.getpixel((w - 1, y)))
+    return pixels
+
+
+def _has_transparent_background(img: Image.Image, threshold: float = 0.5) -> bool:
+    """Check if the majority of border pixels are already transparent."""
+    transparent = sum(1 for p in _border_pixels(img) if p[3] < 10)
+    total = 2 * (img.width + img.height)
+    return (transparent / total) >= threshold
+
+
 def _detect_bg_color(img: Image.Image) -> tuple[int, ...]:
     """Detect background color by sampling border pixels."""
-    w, h = img.size
-    border_pixels: list[tuple[int, ...]] = []
-
-    # Sample top and bottom rows
-    for x in range(w):
-        border_pixels.append(img.getpixel((x, 0)))
-        border_pixels.append(img.getpixel((x, h - 1)))
-
-    # Sample left and right columns
-    for y in range(h):
-        border_pixels.append(img.getpixel((0, y)))
-        border_pixels.append(img.getpixel((w - 1, y)))
+    border = _border_pixels(img)
 
     # Quantize to reduce near-identical colors (group within ±5 per channel)
     def quantize(c: tuple[int, ...]) -> tuple[int, ...]:
         return tuple(round(v / 5) * 5 for v in c[:3])
 
-    counts = Counter(quantize(p) for p in border_pixels)
+    counts = Counter(quantize(p) for p in border)
     dominant = counts.most_common(1)[0][0]
     return dominant
 
@@ -147,7 +156,9 @@ def main(
     img = img.convert("RGBA")
     typer.echo(f"Original size: {img.width}x{img.height}")
 
-    if bg_color:
+    if _has_transparent_background(img):
+        typer.echo("Background is already transparent, skipping removal.")
+    elif bg_color:
         bg_rgb = _parse_hex(bg_color)
         typer.echo(f"Using specified background color: RGB{bg_rgb}")
         pixels = img.load()
