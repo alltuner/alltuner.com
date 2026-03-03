@@ -22,7 +22,7 @@ The homepage has a CSS-only scrolling logo carousel. To add a new logo:
 ### Image guidelines
 
 - **SVGs preferred** — scale perfectly, smallest file size.
-- **PNGs**: export at 3x the rendered height for retina clarity. Logos render at `h-16` (64px CSS), so PNGs should be **192px tall** (width proportional to aspect ratio).
+- **PNGs**: export at 3x the rendered height for retina clarity. Logos render at `h-8` (32px CSS), so PNGs should be **96px tall** (width proportional to aspect ratio).
 - **Trim whitespace** — ensure no extra padding around the logo so visual heights stay consistent across logos.
 - **Single-color SVGs**: in Inkscape, set all fills to black (`#000000`), save as Plain SVG, then replace `fill="#000000"` (and any `style="fill:#000000"`) with `fill="currentColor"` in a text editor. The logo will automatically inherit the theme color (`raisin`/`raisin-dark`).
 

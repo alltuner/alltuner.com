@@ -5,12 +5,12 @@
     <ul class="logo-carousel-list" role="list">
       {{ range . }}
       <li>
-        <a href="{{ .url }}" class="text-raisin dark:text-raisin-dark">
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="text-raisin dark:text-raisin-dark">
           {{ if .logoDark }}
-          <img src="/statics/img/logos/{{ .logo }}" alt="{{ .name }} logo" class="h-16 w-auto opacity-60 dark:hidden" width="120" height="40" loading="lazy">
-          <img src="/statics/img/logos/{{ .logoDark }}" alt="{{ .name }} logo" class="h-16 w-auto hidden dark:block dark:opacity-50" width="120" height="40" loading="lazy">
+          <img src="/statics/img/logos/{{ .logo }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:hidden" width="120" height="40" loading="lazy">
+          <img src="/statics/img/logos/{{ .logoDark }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale hidden dark:block dark:opacity-30" width="120" height="40" loading="lazy">
           {{ else }}
-          <img src="/statics/img/logos/{{ .logo }}" alt="{{ .name }} logo" class="h-16 w-auto opacity-60 dark:opacity-50" width="120" height="40" loading="lazy">
+          <img src="/statics/img/logos/{{ .logo }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:invert dark:opacity-30" width="120" height="40" loading="lazy">
           {{ end }}
         </a>
       </li>
@@ -20,12 +20,12 @@
     <ul class="logo-carousel-list" aria-hidden="true" role="presentation">
       {{ range . }}
       <li>
-        <a href="{{ .url }}" class="text-raisin dark:text-raisin-dark" tabindex="-1">
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="text-raisin dark:text-raisin-dark" tabindex="-1">
           {{ if .logoDark }}
-          <img src="/statics/img/logos/{{ .logo }}" alt="{{ .name }} logo" class="h-16 w-auto opacity-60 dark:hidden" width="120" height="40" loading="lazy">
-          <img src="/statics/img/logos/{{ .logoDark }}" alt="{{ .name }} logo" class="h-16 w-auto hidden dark:block dark:opacity-50" width="120" height="40" loading="lazy">
+          <img src="/statics/img/logos/{{ .logo }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:hidden" width="120" height="40" loading="lazy">
+          <img src="/statics/img/logos/{{ .logoDark }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale hidden dark:block dark:opacity-30" width="120" height="40" loading="lazy">
           {{ else }}
-          <img src="/statics/img/logos/{{ .logo }}" alt="{{ .name }} logo" class="h-16 w-auto opacity-60 dark:opacity-50" width="120" height="40" loading="lazy">
+          <img src="/statics/img/logos/{{ .logo }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:invert dark:opacity-30" width="120" height="40" loading="lazy">
           {{ end }}
         </a>
       </li>
