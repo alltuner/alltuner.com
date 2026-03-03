@@ -7,11 +7,12 @@
 # ]
 # ///
 
-"""Prepare a single-color SVG logo for the carousel.
+"""Prepare an SVG logo for the carousel.
 
 - Trims whitespace by recalculating the viewBox to fit all paths/shapes
-- If single-color, replaces that color with currentColor for theme inheritance
-- Multi-color SVGs are left as-is
+- Single-color SVGs: replaces the color with currentColor
+- Multi-color SVGs: replaces each color with currentColor at an opacity
+  derived from its luminance, preserving relative brightness
 """
 
 import re
@@ -21,22 +22,25 @@ from typing import Annotated
 
 import typer
 from bs4 import BeautifulSoup
-from svgpathtools import svg2paths2
+from svgpathtools import Document as SvgDocument
 
 
-def _trim_viewbox(soup: BeautifulSoup) -> None:
+def _trim_viewbox(soup: BeautifulSoup, original_text: str) -> None:
     """Adjust the SVG viewBox to tightly fit all paths and shapes."""
     svg_tag = soup.find("svg")
     if not svg_tag:
         return
 
-    # svgpathtools needs a file; write a temp copy with currentColor replaced
-    raw = str(soup).replace("currentColor", "#000000")
+    # svgpathtools needs a file; use the original file text (not str(soup))
+    # because BeautifulSoup's XML parser may namespace <svg> as <svg:svg>.
+    raw = original_text.replace("currentColor", "#000000")
     with NamedTemporaryFile(mode="w", suffix=".svg", delete=False) as f:
         f.write(raw)
         tmp = Path(f.name)
     try:
-        paths, attributes, _ = svg2paths2(str(tmp))
+        # Document.paths_from_group returns paths with transforms already applied
+        doc = SvgDocument(str(tmp))
+        paths = doc.paths_from_group(doc.tree.getroot())
     finally:
         tmp.unlink(missing_ok=True)
 
@@ -44,24 +48,16 @@ def _trim_viewbox(soup: BeautifulSoup) -> None:
         typer.echo("Warning: no paths found in SVG, skipping trim", err=True)
         return
 
-    # Compute bounding box across all paths
+    # Compute bounding box across all transformed paths
     xmin, xmax, ymin, ymax = float("inf"), float("-inf"), float("inf"), float("-inf")
-    for path, attr in zip(paths, attributes):
+    for path in paths:
         if not path:
             continue
         px_min, px_max, py_min, py_max = path.bbox()
-        # Expand by half stroke-width if present
-        sw = 0.0
-        stroke_w = attr.get("stroke-width", "")
-        if stroke_w:
-            try:
-                sw = float(stroke_w.replace("px", "")) / 2
-            except ValueError:
-                pass
-        xmin = min(xmin, px_min - sw)
-        xmax = max(xmax, px_max + sw)
-        ymin = min(ymin, py_min - sw)
-        ymax = max(ymax, py_max + sw)
+        xmin = min(xmin, px_min)
+        xmax = max(xmax, px_max)
+        ymin = min(ymin, py_min)
+        ymax = max(ymax, py_max)
 
     if xmin == float("inf"):
         typer.echo("Warning: all paths are empty, skipping trim", err=True)
@@ -115,38 +111,122 @@ def _collect_colors(soup: BeautifulSoup) -> set[str]:
     return colors
 
 
-def _replace_fills(soup: BeautifulSoup) -> None:
-    """If single-color SVG, replace that color with currentColor. Multi-color SVGs are left as-is."""
-    colors = _collect_colors(soup)
+def _color_to_opacity(color: str) -> float:
+    """Convert a hex color to an opacity value (darker → higher opacity)."""
+    color = color.strip().lower()
+    if color.startswith("#"):
+        h = color[1:]
+        if len(h) == 3:
+            h = h[0] * 2 + h[1] * 2 + h[2] * 2
+        if len(h) == 6:
+            try:
+                r = int(h[0:2], 16) / 255
+                g = int(h[2:4], 16) / 255
+                b = int(h[4:6], 16) / 255
+                luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b
+                return round(1 - luminance, 3)
+            except ValueError:
+                pass
+    return 1.0
 
+
+def _parse_style(style: str) -> list[tuple[str, str]]:
+    """Parse a CSS style string into an ordered list of (property, value) pairs."""
+    props = []
+    for part in style.split(";"):
+        part = part.strip()
+        if ":" in part:
+            key, val = part.split(":", 1)
+            props.append((key.strip(), val.strip()))
+    return props
+
+
+def _replace_fills(soup: BeautifulSoup) -> None:
+    """Replace fill/stroke colors with currentColor.
+
+    Single-color: simple replacement.
+    Multi-color: each color maps to currentColor at an opacity derived from
+    its luminance, preserving relative brightness.
+    """
+    colors = _collect_colors(soup)
     if not colors:
         return
-    if len(colors) > 1:
-        typer.echo(f"Multi-color SVG ({len(colors)} colors: {', '.join(sorted(colors))}), skipping recolor")
-        return
 
-    target = colors.pop()
-    typer.echo(f"Single-color SVG, replacing {target} with currentColor")
+    # Build opacity map: color → opacity (None means no opacity attr needed)
+    opacity_map: dict[str, float | None]
+    if len(colors) == 1:
+        target = colors.pop()
+        typer.echo(f"Single-color SVG, replacing {target} with currentColor")
+        opacity_map = {target: None}
+    else:
+        opacity_map = {}
+        typer.echo(f"Multi-color SVG ({len(colors)} colors), mapping to currentColor:")
+        for c in sorted(colors):
+            op = _color_to_opacity(c)
+            opacity_map[c] = op
+            typer.echo(f"  {c} → opacity {op}")
 
+    # --- Inline fill/stroke attributes ---
     for tag in soup.find_all(True):
-        for attr in ("fill", "stroke"):
+        for attr, op_attr in [("fill", "fill-opacity"), ("stroke", "stroke-opacity")]:
             val = tag.get(attr)
-            if isinstance(val, str) and val.strip().lower() == target:
+            if isinstance(val, str) and val.strip().lower() in opacity_map:
+                opacity = opacity_map[val.strip().lower()]
                 tag[attr] = "currentColor"
+                if opacity is not None:
+                    tag[op_attr] = str(opacity)
 
+        # --- Inline style attributes ---
         style = tag.get("style")
-        if isinstance(style, str):
-            for prop in ("fill", "stroke"):
-                style = style.replace(f"{prop}:{target}", f"{prop}:currentColor")
-                style = style.replace(f"{prop}: {target}", f"{prop}:currentColor")
-            tag["style"] = style
+        if not isinstance(style, str):
+            continue
 
-    # Replace in <style> CSS blocks
+        props = _parse_style(style)
+        opacity_updates: dict[str, float] = {}
+        new_props: list[tuple[str, str]] = []
+
+        for key, val in props:
+            kl = key.strip().lower()
+            vl = val.strip().lower()
+            if kl in ("fill", "stroke") and vl in opacity_map:
+                opacity = opacity_map[vl]
+                new_props.append((key, "currentColor"))
+                if opacity is not None:
+                    opacity_updates[f"{kl}-opacity"] = opacity
+            elif kl in opacity_updates:
+                # Overwrite existing fill-opacity / stroke-opacity
+                new_props.append((key, str(opacity_updates.pop(kl))))
+            else:
+                new_props.append((key, val))
+
+        # Append opacity props that weren't already present
+        for op_key, op_val in opacity_updates.items():
+            new_props.append((op_key, str(op_val)))
+
+        tag["style"] = ";".join(f"{k}:{v}" for k, v in new_props)
+
+    # --- <style> CSS blocks ---
     for style_tag in soup.find_all("style"):
-        if style_tag.string and target in style_tag.string.lower():
-            style_tag.string = re.sub(
-                re.escape(target), "currentColor", style_tag.string, flags=re.IGNORECASE
-            )
+        if not style_tag.string:
+            continue
+        css = style_tag.string
+        for color, opacity in opacity_map.items():
+            for prop, op_prop in [("fill", "fill-opacity"), ("stroke", "stroke-opacity")]:
+                if opacity is not None:
+                    css = re.sub(
+                        rf"({prop}\s*:\s*)" + re.escape(color),
+                        rf"\1currentColor;{op_prop}:{opacity}",
+                        css,
+                        flags=re.IGNORECASE,
+                    )
+                else:
+                    css = re.sub(
+                        rf"({prop}\s*:\s*)" + re.escape(color),
+                        r"\1currentColor",
+                        css,
+                        flags=re.IGNORECASE,
+                    )
+        style_tag.string = css
 
 
 def main(
@@ -168,9 +248,10 @@ def main(
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    soup = BeautifulSoup(svg.read_text(), "xml")
+    original_text = svg.read_text()
+    soup = BeautifulSoup(original_text, "xml")
 
-    _trim_viewbox(soup)
+    _trim_viewbox(soup, original_text)
     _replace_fills(soup)
 
     dest.write_text(str(soup))
