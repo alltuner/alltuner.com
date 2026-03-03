@@ -3,19 +3,24 @@
   <div class="logo-carousel-track">
     {{/* Primary list — accessible */}}
     <ul class="logo-carousel-list" role="list">
-      {{ range . }}
+      {{ range $i, $logo := . }}
       <li>
-        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="text-raisin dark:text-raisin-dark">
-          {{ if .logoDark }}
-          <img src="/statics/img/logos/{{ .logo }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:hidden" width="120" height="40" loading="eager">
-          <img src="/statics/img/logos/{{ .logoDark }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale hidden dark:block dark:opacity-30" width="120" height="40" loading="eager">
-          {{ else if strings.HasSuffix .logo ".svg" }}
-          {{ $svg := os.ReadFile (printf "static/statics/img/logos/%s" .logo) }}
+        <a href="{{ $logo.url }}" target="_blank" rel="noopener noreferrer" class="text-raisin dark:text-raisin-dark">
+          {{ if $logo.logoDark }}
+          <img src="/statics/img/logos/{{ $logo.logo }}" alt="{{ $logo.name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:hidden" width="120" height="40" loading="eager">
+          <img src="/statics/img/logos/{{ $logo.logoDark }}" alt="{{ $logo.name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale hidden dark:block dark:opacity-30" width="120" height="40" loading="eager">
+          {{ else if strings.HasSuffix $logo.logo ".svg" }}
+          {{ $svg := os.ReadFile (printf "static/statics/img/logos/%s" $logo.logo) }}
+          {{ $idPrefix := printf "logo-a-%d-" $i }}
           {{ $svg = replaceRE `<(/?)svg:` `<${1}` $svg }}
-          {{ $svg = replaceRE `<svg\b` (printf `<svg role="img" aria-label="%s logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:opacity-30"` .name) $svg 1 }}
+          {{ $svg = replaceRE `id="([^"]+)"` (printf `id="%s$1"` $idPrefix) $svg }}
+          {{ $svg = replaceRE `url\(#([^)]+)\)` (printf `url(#%s$1)` $idPrefix) $svg }}
+          {{ $svg = replaceRE `\shref="#([^"]+)"` (printf ` href="#%s$1"` $idPrefix) $svg }}
+          {{ $svg = replaceRE `xlink:href="#([^"]+)"` (printf `xlink:href="#%s$1"` $idPrefix) $svg }}
+          {{ $svg = replaceRE `<svg\b` (printf `<svg role="img" aria-label="%s logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:opacity-30"` $logo.name) $svg 1 }}
           {{ $svg | safeHTML }}
           {{ else }}
-          <img src="/statics/img/logos/{{ .logo }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:invert dark:opacity-30" width="120" height="40" loading="eager">
+          <img src="/statics/img/logos/{{ $logo.logo }}" alt="{{ $logo.name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:invert dark:opacity-30" width="120" height="40" loading="eager">
           {{ end }}
         </a>
       </li>
@@ -23,19 +28,24 @@
     </ul>
     {{/* Duplicate list — hidden from assistive tech */}}
     <ul class="logo-carousel-list" aria-hidden="true" role="presentation">
-      {{ range . }}
+      {{ range $i, $logo := . }}
       <li>
-        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="text-raisin dark:text-raisin-dark" tabindex="-1">
-          {{ if .logoDark }}
-          <img src="/statics/img/logos/{{ .logo }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:hidden" width="120" height="40" loading="eager">
-          <img src="/statics/img/logos/{{ .logoDark }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale hidden dark:block dark:opacity-30" width="120" height="40" loading="eager">
-          {{ else if strings.HasSuffix .logo ".svg" }}
-          {{ $svg := os.ReadFile (printf "static/statics/img/logos/%s" .logo) }}
+        <a href="{{ $logo.url }}" target="_blank" rel="noopener noreferrer" class="text-raisin dark:text-raisin-dark" tabindex="-1">
+          {{ if $logo.logoDark }}
+          <img src="/statics/img/logos/{{ $logo.logo }}" alt="{{ $logo.name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:hidden" width="120" height="40" loading="eager">
+          <img src="/statics/img/logos/{{ $logo.logoDark }}" alt="{{ $logo.name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale hidden dark:block dark:opacity-30" width="120" height="40" loading="eager">
+          {{ else if strings.HasSuffix $logo.logo ".svg" }}
+          {{ $svg := os.ReadFile (printf "static/statics/img/logos/%s" $logo.logo) }}
+          {{ $idPrefix := printf "logo-b-%d-" $i }}
           {{ $svg = replaceRE `<(/?)svg:` `<${1}` $svg }}
+          {{ $svg = replaceRE `id="([^"]+)"` (printf `id="%s$1"` $idPrefix) $svg }}
+          {{ $svg = replaceRE `url\(#([^)]+)\)` (printf `url(#%s$1)` $idPrefix) $svg }}
+          {{ $svg = replaceRE `\shref="#([^"]+)"` (printf ` href="#%s$1"` $idPrefix) $svg }}
+          {{ $svg = replaceRE `xlink:href="#([^"]+)"` (printf `xlink:href="#%s$1"` $idPrefix) $svg }}
           {{ $svg = replaceRE `<svg\b` (printf `<svg aria-hidden="true" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:opacity-30"`) $svg 1 }}
           {{ $svg | safeHTML }}
           {{ else }}
-          <img src="/statics/img/logos/{{ .logo }}" alt="{{ .name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:invert dark:opacity-30" width="120" height="40" loading="eager">
+          <img src="/statics/img/logos/{{ $logo.logo }}" alt="{{ $logo.name }} logo" class="max-h-8 max-w-24 w-auto h-auto grayscale opacity-40 dark:invert dark:opacity-30" width="120" height="40" loading="eager">
           {{ end }}
         </a>
       </li>
