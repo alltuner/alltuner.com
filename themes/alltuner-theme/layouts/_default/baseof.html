@@ -72,7 +72,9 @@
   {{- $jsonld := dict "@context" "https://schema.org" "@graph" (slice $org $website $app) -}}
   <script type="application/ld+json">{{ $jsonld | jsonify | safeJS }}</script>
   {{- end }}
-  <link href="/statics/img/favicon.svg" rel="icon" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/statics/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   {{- with .Site.Params.analyticsSrc }}
   {{- $u := urls.Parse . }}
   <link rel="preconnect" href="{{ $u.Scheme }}://{{ $u.Host }}" />
