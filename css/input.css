@@ -75,7 +75,7 @@
 
   @keyframes marquee-scroll {
     from { transform: translateX(0); }
-    to { transform: translateX(calc(-50% - var(--gap) / 2)); }
+    to { transform: translateX(-50%); }
   }
 
   --animate-marquee: marquee-scroll 60s linear infinite;
@@ -92,7 +92,6 @@
 }
 .logo-carousel-track {
   display: flex;
-  gap: var(--gap);
   width: max-content;
   animation: marquee-scroll 21s linear infinite;
 }
@@ -100,7 +99,7 @@
   display: flex;
   gap: var(--gap);
   list-style: none;
-  padding: 0;
+  padding: 0 calc(var(--gap) / 2);
   margin: 0;
   flex-shrink: 0;
 }
