@@ -11,7 +11,8 @@
     "clean": "rm -rf public",
     "assets": "bun run --parallel fonts css:build js:build",
     "build": "bun run --sequential assets hugo",
-    "dev": "bun run --parallel css:watch js:watch serve",
+    "dev": "bun run --sequential assets dev:serve",
+    "dev:serve": "bun run --parallel css:watch js:watch serve",
     "serve": "hugo serve --disableFastRender --gc"
   },
   "dependencies": {
