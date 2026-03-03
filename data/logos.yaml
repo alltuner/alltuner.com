@@ -1,0 +1,23 @@
+- name: Acme Co
+  logo: mock-logo-1.svg
+  url: "#"
+
+- name: Globex
+  logo: mock-logo-2.svg
+  url: "#"
+
+- name: Initech
+  logo: mock-logo-3.svg
+  url: "#"
+
+- name: Soylent
+  logo: mock-logo-4.svg
+  url: "#"
+
+- name: Wonka
+  logo: mock-logo-5.svg
+  url: "#"
+
+- name: Cyberdyne
+  logo: mock-logo-6.svg
+  url: "#"
