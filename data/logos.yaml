@@ -1,0 +1,49 @@
+- name: Ralarsa
+  logo: ralarsa.svg
+  url: "https://www.ralarsa.es"
+
+- name: T-Systems
+  logo: t-systems.svg
+  url: "https://www.t-systems.com"
+
+- name: Spotify
+  logo: spotify.svg
+  url: "https://www.spotify.com"
+
+- name: FloraQueen
+  logo: floraqueen.svg
+  url: "https://www.floraqueen.com"
+
+- name: Lidl
+  logo: lidl.svg
+  url: "https://www.lidl.es"
+
+- name: Flumotion
+  logo: flumotion-light.png
+  logoDark: flumotion-dark.png
+  url: "https://www.flumotion.com"
+
+- name: BCN Music Lab
+  logo: bcn-music-lab-light.png
+  logoDark: bcn-music-lab-dark.png
+  url: "https://www.bcnmusiclab.com"
+
+- name: Careesma
+  logo: careesma.svg
+  url: "https://www.careesma.at"
+
+- name: Rigora Labs
+  logo: rigora-labs.svg
+  url: "https://www.rigoralabs.com"
+
+- name: Catalunya Ràdio
+  logo: catalunya-radio.svg
+  url: "https://www.ccma.cat/catradio"
+
+- name: Bentley Systems
+  logo: bentley-systems.svg
+  url: "https://www.bentley.com"
+
+- name: ON Economia
+  logo: on-economia.svg
+  url: "https://www.oneconomia.com"

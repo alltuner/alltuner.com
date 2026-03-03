@@ -1,6 +1,6 @@
 {{ define "content" }}
-<header class="flex items-center justify-center">
-  <div class="max-w-5xl mx-auto px-6 md:px-8 pt-28 md:pt-36 pb-6 md:pb-8 flex flex-col items-center text-center">
+<header class="w-full flex items-center justify-center">
+  <div class="w-full max-w-5xl mx-auto px-6 md:px-8 pt-28 md:pt-36 pb-6 md:pb-8 flex flex-col items-center text-center">
     <!-- Logo -->
     <div class="animate-scale-in">
       <img src="/statics/img/all-tuner-logo.svg"
@@ -29,16 +29,21 @@
       {{ .Params.subtitle }}<br>{{ .Params.subtitle2 }}
     </p>
 
+    <!-- Logo carousel -->
+    <div class="w-full mt-10 md:mt-14 mb-2 md:mb-4 animate-fade-up" style="animation-delay: 0.35s">
+      {{ partial "logo-carousel.html" . }}
+    </div>
+
     <!-- Projects link -->
     <a href="{{ "projects/" | relLangURL }}"
        class="group mt-8 md:mt-10 inline-flex items-center gap-2 px-6 py-2.5 text-sm tracking-wide text-wine/80 dark:text-wine-light border border-wine/15 dark:border-wine-light/30 rounded-full bg-wine/[0.03] dark:bg-wine-light/[0.1] hover:bg-wine/[0.08] dark:hover:bg-wine-light/[0.18] hover:border-wine/25 dark:hover:border-wine-light/40 hover:text-wine dark:hover:text-wine-light transition-all duration-300 animate-fade-up"
-       style="animation-delay: 0.4s">
+       style="animation-delay: 0.45s">
       {{ T "projects_title" }}
       <span class="transition-transform duration-300 group-hover:translate-x-0.5">&rarr;</span>
     </a>
 
     <!-- Decorative line -->
-    <div class="mt-8 md:mt-10 h-px w-24 bg-gradient-to-r from-transparent via-wine/50 to-transparent origin-center animate-draw-line" style="animation-delay: 0.5s" aria-hidden="true"></div>
+    <div class="mt-8 md:mt-10 h-px w-24 bg-gradient-to-r from-transparent via-wine/50 to-transparent origin-center animate-draw-line" style="animation-delay: 0.55s" aria-hidden="true"></div>
   </div>
 </header>
 
