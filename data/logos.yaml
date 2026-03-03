@@ -47,3 +47,8 @@
 - name: ON Economia
   logo: on-economia.svg
   url: "https://www.oneconomia.com"
+
+- name: Secways
+  logo: secways-light.png
+  logoDark: secways-dark.png
+  url: "https://secways.com/"
