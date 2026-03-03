@@ -114,7 +114,7 @@
     <footer class="pb-8 md:pb-12 animate-fade-in" style="animation-delay: 0.6s" role="contentinfo">
       <div class="max-w-5xl mx-auto px-6 md:px-8 flex flex-col items-center gap-5">
         <!-- Social + language row -->
-        <div class="flex items-center gap-4">
+        <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-6">
           {{ with .Site.Params.social }}
           <nav aria-label="{{ T "social_links_label" }}" class="flex items-center gap-0.5">
             {{- range . }}
@@ -126,43 +126,46 @@
             {{- end }}
           </nav>
           {{ end }}
-          <span class="text-taupe/25 text-xs">|</span>
-          <nav aria-label="{{ T "language_label" }}" class="flex items-center gap-1.5 text-xs tracking-wide">
-            {{- range $i, $lang := .Site.Languages -}}
-            {{- if $i }} <span class="text-taupe/25">/</span> {{ end -}}
-            {{- if eq $lang.Lang $.Language.Lang -}}
-            <span class="text-raisin/70 dark:text-raisin-dark/70 font-medium uppercase">{{ $lang.Lang }}</span>
-            {{- else -}}
-            <a href="{{ with $.Translations }}{{ range . }}{{ if eq .Language.Lang $lang.Lang }}{{ .RelPermalink }}{{ end }}{{ end }}{{ else }}/{{ $lang.Lang }}/{{ end }}"
-               class="text-taupe/60 hover:text-wine transition-colors duration-300 uppercase">{{ $lang.Lang }}</a>
-            {{- end -}}
-            {{- end }}
-          </nav>
-          <span class="text-taupe/25 text-xs">|</span>
-          <button id="theme-toggle" class="p-1.5 rounded-full hover:bg-wine/5 dark:hover:bg-wine/10 transition-all duration-300 cursor-pointer" title="{{ T "toggle_theme" }}" aria-label="{{ T "toggle_theme" }}">
-            <!-- system icon -->
-            <svg class="h-[16px] w-[16px] text-taupe/60 hover:text-wine transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            <!-- light icon -->
-            <svg class="h-[16px] w-[16px] text-taupe/60 hover:text-wine transition-colors duration-300 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-            <!-- dark icon -->
-            <svg class="h-[16px] w-[16px] text-taupe/60 hover:text-wine transition-colors duration-300 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          </button>
+          <div class="flex items-center gap-4">
+            <nav aria-label="{{ T "language_label" }}" class="flex items-center gap-1.5 text-xs tracking-wide">
+              {{- range $i, $lang := .Site.Languages -}}
+              {{- if $i }} <span class="text-taupe/25">/</span> {{ end -}}
+              {{- if eq $lang.Lang $.Language.Lang -}}
+              <span class="text-raisin/70 dark:text-raisin-dark/70 font-medium uppercase">{{ $lang.Lang }}</span>
+              {{- else -}}
+              <a href="{{ with $.Translations }}{{ range . }}{{ if eq .Language.Lang $lang.Lang }}{{ .RelPermalink }}{{ end }}{{ end }}{{ else }}/{{ $lang.Lang }}/{{ end }}"
+                 class="text-taupe/60 hover:text-wine transition-colors duration-300 uppercase">{{ $lang.Lang }}</a>
+              {{- end -}}
+              {{- end }}
+            </nav>
+            <span class="text-taupe/25 text-xs">|</span>
+            <button id="theme-toggle" class="p-1.5 rounded-full hover:bg-wine/5 dark:hover:bg-wine/10 transition-all duration-300 cursor-pointer" title="{{ T "toggle_theme" }}" aria-label="{{ T "toggle_theme" }}">
+              <!-- system icon -->
+              <svg class="h-[16px] w-[16px] text-taupe/60 hover:text-wine transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <!-- light icon -->
+              <svg class="h-[16px] w-[16px] text-taupe/60 hover:text-wine transition-colors duration-300 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+              <!-- dark icon -->
+              <svg class="h-[16px] w-[16px] text-taupe/60 hover:text-wine transition-colors duration-300 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+          </div>
         </div>
 
         <!-- Credits -->
-        <div class="flex items-center justify-center gap-2 text-xs text-taupe/60 dark:text-taupe/70">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2 text-xs text-taupe/60 dark:text-taupe/70">
           <span>{{ T "founded_by" }}
             <a href="{{ T "founder_url" }}"
                class="text-taupe hover:text-wine transition-colors duration-300 underline decoration-taupe/20 underline-offset-2 hover:decoration-wine/40">David Poblador i Garcia</a>
             {{ T "in_location" }}</span>
-          <span class="text-taupe/25">&middot;</span>
-          <a id="email-link" href="#" data-u="hello" data-d="alltuner.com"
-             class="inline-flex items-center rounded-full hover:bg-wine/5 transition-all duration-300 p-1 -m-1"
-             aria-label="Email">
-            <svg class="h-[14px] w-[14px] text-taupe/60 hover:text-wine transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
-          </a>
-          <span class="text-taupe/25">&middot;</span>
-          <span>&copy; {{ now.Format "2006" }}, All Tuner Labs SL</span>
+          <span class="hidden sm:inline text-taupe/25">&middot;</span>
+          <div class="flex items-center gap-2">
+            <span>&copy; {{ now.Format "2006" }}, All Tuner Labs SL</span>
+            <span class="text-taupe/25">&middot;</span>
+            <a id="email-link" href="#" data-u="hello" data-d="alltuner.com"
+               class="inline-flex items-center rounded-full hover:bg-wine/5 transition-all duration-300 p-1 -m-1"
+               aria-label="Email">
+              <svg class="h-[14px] w-[14px] text-taupe/60 hover:text-wine transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
