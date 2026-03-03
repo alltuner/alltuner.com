@@ -98,10 +98,12 @@
     --fade: 2rem;
   }
 }
-.logo-carousel-list img {
+.logo-carousel-list img,
+.logo-carousel-list svg {
   transition: opacity 0.2s ease;
 }
-.logo-carousel-list a:hover img {
+.logo-carousel-list a:hover img,
+.logo-carousel-list a:hover svg {
   opacity: 0.7 !important;
 }
 .logo-carousel-track {
