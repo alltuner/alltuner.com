@@ -162,6 +162,9 @@
           <div class="flex items-center gap-2">
             <span>&copy; {{ now.Format "2006" }}, All Tuner Labs SL</span>
             <span class="text-taupe/25">&middot;</span>
+            <a href="{{ "sponsor/" | relLangURL }}"
+               class="text-taupe/60 hover:text-wine transition-colors duration-300">{{ T "funding_footer_link" }}</a>
+            <span class="text-taupe/25">&middot;</span>
             <a id="email-link" href="#" data-u="hello" data-d="alltuner.com"
                class="inline-flex items-center rounded-full hover:bg-wine/5 transition-all duration-300 p-1 -m-1"
                aria-label="Email">

@@ -111,6 +111,15 @@ knowsAbout = [
 
 # Projects (order here controls display order)
 [[params.projects]]
+name = "Factory Floor"
+description = "GPU-accelerated terminal dashboard for managing multiple projects from a single screen."
+description_ca = "Tauler de terminal accelerat per GPU per gestionar múltiples projectes des d'una sola pantalla."
+description_sv = "GPU-accelererad terminalpanel för att hantera flera projekt från en enda skärm."
+description_es = "Panel de terminal acelerado por GPU para gestionar múltiples proyectos desde una sola pantalla."
+link = "https://factory-floor.com"
+status = "beta"
+
+[[params.projects]]
 name = "Radar de la Música"
 description = "Curated directory of music innovation projects in Barcelona, with Barcelona Music Lab."
 description_ca = "Directori de projectes d'innovació musical a Barcelona, amb Barcelona Music Lab."

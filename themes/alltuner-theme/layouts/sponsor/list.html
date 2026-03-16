@@ -1,0 +1,93 @@
+{{/* ABOUTME: Layout for the funding/support page. */}}
+{{/* ABOUTME: Displays financial support options for All Tuner Labs' open source work. */}}
+
+{{ define "title" }}{{ .Title }} &mdash; {{ .Site.Title }}{{ end }}
+
+{{ define "content" }}
+<header class="flex items-center justify-center">
+  <div class="max-w-3xl mx-auto px-6 md:px-8 pt-20 md:pt-28 pb-8 md:pb-12 flex flex-col items-center text-center">
+    <!-- Logo -->
+    <a href="{{ "/" | relLangURL }}" class="animate-scale-in">
+      <img src="/statics/img/all-tuner-logo.svg"
+           alt="{{ .Site.Title }} Logo"
+           class="h-16 w-auto md:h-24 drop-shadow-sm dark:hidden"
+           width="1024"
+           height="1024" />
+      <img src="/statics/img/all-tuner-logo-dark.svg"
+           alt="{{ .Site.Title }} Logo"
+           class="h-16 w-auto md:h-24 drop-shadow-sm hidden dark:block"
+           width="1024"
+           height="1024" />
+    </a>
+
+    <h1 class="mt-10 md:mt-14 font-display text-2xl md:text-4xl lg:text-5xl text-raisin dark:text-raisin-dark font-light leading-tight tracking-tight animate-fade-up" style="animation-delay: 0.15s">
+      {{ .Title }}
+    </h1>
+
+    {{ with .Description }}
+    <p class="mt-4 md:mt-6 text-base md:text-lg text-taupe dark:text-taupe/90 font-normal max-w-lg animate-fade-up" style="animation-delay: 0.25s">
+      {{ . }}
+    </p>
+    {{ end }}
+
+    <!-- Decorative line -->
+    <div class="mt-8 md:mt-10 h-px w-24 bg-gradient-to-r from-transparent via-wine/50 to-transparent origin-center animate-draw-line" style="animation-delay: 0.4s" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main id="main" role="main" class="w-full max-w-3xl mx-auto px-6 md:px-8 pb-16 md:pb-24">
+
+  <!-- Financial support -->
+  <div class="flex flex-col gap-4 items-stretch max-w-md mx-auto animate-fade-up" style="animation-delay: 0.5s">
+    <a href="https://github.com/sponsors/alltuner"
+       class="group flex items-center gap-4 p-5 rounded-xl border border-raisin/[0.06] dark:border-raisin-dark/[0.06] bg-raisin/[0.02] dark:bg-raisin-dark/[0.02] hover:border-wine/20 dark:hover:border-wine-light/20 hover:bg-wine/[0.03] dark:hover:bg-wine-light/[0.05] transition-all duration-300">
+      <svg class="w-5 h-5 text-wine/60 dark:text-wine-light/60 group-hover:text-wine dark:group-hover:text-wine-light transition-colors duration-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      <div>
+        <div class="font-display text-base font-light text-raisin dark:text-raisin-dark group-hover:text-wine dark:group-hover:text-wine-light transition-colors duration-300">GitHub Sponsors</div>
+        <div class="text-xs text-taupe dark:text-taupe/90 mt-0.5">{{ T "funding_github_desc" }}</div>
+      </div>
+    </a>
+
+    <a href="https://buymeacoffee.com/alltuner"
+       class="group flex items-center gap-4 p-5 rounded-xl border border-raisin/[0.06] dark:border-raisin-dark/[0.06] bg-raisin/[0.02] dark:bg-raisin-dark/[0.02] hover:border-wine/20 dark:hover:border-wine-light/20 hover:bg-wine/[0.03] dark:hover:bg-wine-light/[0.05] transition-all duration-300">
+      <svg class="w-5 h-5 text-wine/60 dark:text-wine-light/60 group-hover:text-wine dark:group-hover:text-wine-light transition-colors duration-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      <div>
+        <div class="font-display text-base font-light text-raisin dark:text-raisin-dark group-hover:text-wine dark:group-hover:text-wine-light transition-colors duration-300">Buy Me a Coffee</div>
+        <div class="text-xs text-taupe dark:text-taupe/90 mt-0.5">{{ T "funding_coffee_desc" }}</div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Projects we maintain -->
+  <div class="mt-12 md:mt-16 flex justify-center" aria-hidden="true">
+    <div class="h-px w-24 bg-gradient-to-r from-transparent via-wine/50 to-transparent"></div>
+  </div>
+
+  <div class="mt-8 md:mt-10 text-center animate-fade-up" style="animation-delay: 0.6s">
+    <p class="text-xs uppercase tracking-widest text-taupe/60 dark:text-taupe/70 mb-6">{{ T "funding_projects_label" }}</p>
+    <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+      {{- range .Site.Params.projects }}
+      {{- if .link }}
+      <a href="{{ .link }}" class="text-sm text-taupe/70 dark:text-taupe/80 hover:text-wine dark:hover:text-wine-light transition-colors duration-300">{{ .name }}</a>
+      {{- else }}
+      <span class="text-sm text-taupe/50">{{ .name }}</span>
+      {{- end }}
+      {{- end }}
+    </div>
+    <a href="https://github.com/alltuner"
+       class="group inline-flex items-center gap-2 mt-4 text-xs text-taupe/50 dark:text-taupe/60 hover:text-wine dark:hover:text-wine-light transition-colors duration-300">
+      <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      github.com/alltuner
+    </a>
+  </div>
+
+  <!-- Navigation -->
+  <div class="mt-10 md:mt-14 flex justify-center animate-fade-up" style="animation-delay: 0.7s">
+    <a href="{{ "/" | relLangURL }}"
+       class="group inline-flex items-center gap-2 px-6 py-2.5 text-sm tracking-wide text-wine/80 dark:text-wine-light border border-wine/15 dark:border-wine-light/30 rounded-full bg-wine/[0.03] dark:bg-wine-light/[0.1] hover:bg-wine/[0.08] dark:hover:bg-wine-light/[0.18] hover:border-wine/25 dark:hover:border-wine-light/40 hover:text-wine dark:hover:text-wine-light transition-all duration-300">
+      <span class="transition-transform duration-300 group-hover:-translate-x-0.5">&larr;</span>
+      {{ T "home_title" }}
+    </a>
+  </div>
+</main>
+{{ end }}

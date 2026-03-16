@@ -43,5 +43,20 @@ other = "Toggle theme"
 [home_title]
 other = "Home"
 
+[funding_title]
+other = "Support"
+
+[funding_footer_link]
+other = "Help us"
+
+[funding_github_desc]
+other = "Recurring or one-time sponsorship via GitHub."
+
+[funding_coffee_desc]
+other = "Quick one-time contribution."
+
+[funding_projects_label]
+other = "Projects your support helps sustain"
+
 [minor_projects_title]
 other = "Free software & tools we maintain"

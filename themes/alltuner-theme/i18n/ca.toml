@@ -43,5 +43,20 @@ other = "Canviar tema"
 [home_title]
 other = "Inici"
 
+[funding_title]
+other = "Suport"
+
+[funding_footer_link]
+other = "Ajuda'ns"
+
+[funding_github_desc]
+other = "Patrocini recurrent o puntual via GitHub."
+
+[funding_coffee_desc]
+other = "Contribució puntual ràpida."
+
+[funding_projects_label]
+other = "Projectes que el teu suport ajuda a mantenir"
+
 [minor_projects_title]
 other = "Programari lliure i eines que mantenim"
