@@ -194,6 +194,11 @@ description = "Auto-sync shell completions for tools managed by mise."
 link = "https://github.com/alltuner/mise-completions-sync"
 
 [[params.minor_projects]]
+name = "switchyard"
+description = "Local Docker registry that syncs images to a central registry in the background."
+link = "https://github.com/alltuner/switchyard"
+
+[[params.minor_projects]]
 name = "projectuner"
 description = "Copier template for git bare repo + worktree projects."
 link = "https://github.com/alltuner/projectuner"
