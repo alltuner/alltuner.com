@@ -33,7 +33,7 @@
 </header>
 
 <main id="main" role="main" class="w-full max-w-3xl mx-auto px-6 md:px-8 pb-16 md:pb-24">
-  {{- $projects := .Site.Params.projects -}}
+  {{- $projects := sort .Site.Params.projects "name" -}}
   {{- $lang := .Language.Lang -}}
 
   <div class="space-y-0 animate-fade-up" style="animation-delay: 0.5s">
@@ -71,7 +71,7 @@
   </div>
 
   <!-- Minor projects -->
-  {{ with .Site.Params.minor_projects }}
+  {{ with sort .Site.Params.minor_projects "name" }}
   <div class="mt-8 md:mt-10 flex justify-center" aria-hidden="true">
     <div class="h-px w-24 bg-gradient-to-r from-transparent via-wine/50 to-transparent"></div>
   </div>
