@@ -156,6 +156,15 @@ link = "https://github.com/alltuner/vibetuner"
 status = "active"
 
 [[params.projects]]
+name = "Vacant"
+description = "Fast domain availability checker. Asks authoritative TLD nameservers directly instead of relying on WHOIS."
+description_ca = "Comprovador ràpid de disponibilitat de dominis. Consulta directament els servidors de noms autoritatius dels TLD en lloc de WHOIS."
+description_sv = "Snabb kontroll av domäntillgänglighet. Frågar TLD:ernas auktoritativa namnservrar direkt i stället för WHOIS."
+description_es = "Comprobador rápido de disponibilidad de dominios. Consulta directamente los servidores de nombres autoritativos de los TLD en lugar de WHOIS."
+link = "https://vacant.alltuner.com"
+status = "active"
+
+[[params.projects]]
 name = "Uns minuts i a clapar"
 description = "AI-produced Catalan bedtime podcast with short educational stories for children and families."
 description_ca = "Podcast de contes de bona nit en català creat amb IA, amb històries educatives per a infants i famílies."
@@ -163,6 +172,24 @@ description_sv = "AI-producerad katalansk podcast med korta pedagogiska berätte
 description_es = "Podcast de cuentos para dormir en catalán creado con IA, con historias educativas para niños y familias."
 link = "https://a-clapar.cat"
 status = "active"
+
+[[params.projects]]
+name = "Gitcabin"
+description = "A tiny self-hosted GitHub clone driven by the official gh CLI, with all metadata stored in git itself."
+description_ca = "Un petit clon de GitHub autoallotjat impulsat per la CLI oficial gh, amb totes les metadades emmagatzemades dins del propi git."
+description_sv = "En liten självhostad GitHub-klon driven av det officiella gh-CLI:t, med all metadata lagrad direkt i git."
+description_es = "Un pequeño clon de GitHub autoalojado impulsado por la CLI oficial gh, con todos los metadatos almacenados dentro del propio git."
+link = "https://gitcabin.com"
+status = "investigation"
+
+[[params.projects]]
+name = "Nameplate"
+description = "Docker-based CoreDNS server that automatically creates DNS records for every machine on your Tailscale network under a custom domain."
+description_ca = "Servidor CoreDNS basat en Docker que crea automàticament registres DNS per a cada màquina de la teva xarxa Tailscale sota un domini propi."
+description_sv = "Docker-baserad CoreDNS-server som automatiskt skapar DNS-poster för varje maskin i ditt Tailscale-nätverk under en egen domän."
+description_es = "Servidor CoreDNS basado en Docker que crea automáticamente registros DNS para cada máquina de tu red Tailscale bajo un dominio propio."
+link = "https://github.com/alltuner/nameplate"
+status = "investigation"
 
 [[params.projects]]
 name = "DevTuner"
@@ -197,6 +224,11 @@ link = "https://github.com/alltuner/mise-completions-sync"
 name = "switchyard"
 description = "Local Docker registry that syncs images to a central registry in the background."
 link = "https://github.com/alltuner/switchyard"
+
+[[params.minor_projects]]
+name = "skills"
+description = "Agent skills published by alltuner — install via skills.sh."
+link = "https://github.com/alltuner/skills"
 
 [[params.minor_projects]]
 name = "projectuner"
