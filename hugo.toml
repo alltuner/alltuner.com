@@ -229,8 +229,3 @@ link = "https://github.com/alltuner/switchyard"
 name = "skills"
 description = "Agent skills published by alltuner — install via skills.sh."
 link = "https://github.com/alltuner/skills"
-
-[[params.minor_projects]]
-name = "projectuner"
-description = "Copier template for git bare repo + worktree projects."
-link = "https://github.com/alltuner/projectuner"
