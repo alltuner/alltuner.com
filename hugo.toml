@@ -165,6 +165,15 @@ link = "https://vacant.alltuner.com"
 status = "active"
 
 [[params.projects]]
+name = "selfmail"
+description = "Email yourself from any shell or AI agent with one command, over Resend. Handy for agents reporting results, cron jobs, and CI."
+description_ca = "Envia't un correu a tu mateix des de qualsevol terminal o agent d'IA amb una sola ordre, mitjançant Resend. Útil per a agents que reporten resultats, tasques cron i CI."
+description_sv = "Mejla dig själv från valfri terminal eller AI-agent med ett enda kommando, via Resend. Praktiskt för agenter som rapporterar resultat, cron-jobb och CI."
+description_es = "Envíate un correo a ti mismo desde cualquier terminal o agente de IA con un solo comando, mediante Resend. Útil para agentes que informan resultados, tareas cron y CI."
+link = "https://github.com/alltuner/selfmail"
+status = "active"
+
+[[params.projects]]
 name = "Uns minuts i a clapar"
 description = "AI-produced Catalan bedtime podcast with short educational stories for children and families."
 description_ca = "Podcast de contes de bona nit en català creat amb IA, amb històries educatives per a infants i famílies."

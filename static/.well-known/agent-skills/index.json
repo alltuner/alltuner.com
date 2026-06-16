@@ -7,6 +7,13 @@
       "description": "Check whether domain names are registered, available, reserved, or invalid. Use when the user asks if a domain is taken or free, wants to find an unregistered name, brainstorms project or product names that need a domain, screens candidates across many TLDs, or filters a list of domains to only the available ones. Queries authoritative TLD nameservers directly — fast, accurate, and not rate-limited like WHOIS.",
       "url": "/.well-known/agent-skills/vacant/SKILL.md",
       "digest": "sha256:83ed3d45d5df26e997b2779845a3897f84c1605e431930d391e92479ed9a4ca4"
+    },
+    {
+      "name": "selfmail",
+      "type": "skill-md",
+      "description": "Email yourself — or a configured address — from the shell or an AI agent, over Resend. Use when the user wants to send themselves an email, get notified by email from a script, cron job, CI, or agent, deliver command output or a file to their own inbox, or asks to \"email me when this is done\". Wraps the one-command `selfmail` CLI (plus an MCP server exposing a send_email tool).",
+      "url": "/.well-known/agent-skills/selfmail/SKILL.md",
+      "digest": "sha256:2eed474916f5d222a0b69b3833ecd18880acf147dde54335d9980a3cbe918028"
     }
   ]
 }
