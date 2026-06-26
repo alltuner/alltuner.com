@@ -25,5 +25,8 @@ The homepage has a CSS-only scrolling logo carousel. To add a new logo:
 - **PNGs**: export at 3x the rendered height for retina clarity. Logos render at `h-8` (32px CSS), so PNGs should be **96px tall** (width proportional to aspect ratio).
 - **Trim whitespace** — ensure no extra padding around the logo so visual heights stay consistent across logos.
 - **Single-color SVGs**: in Inkscape, set all fills to black (`#000000`), save as Plain SVG, then replace `fill="#000000"` (and any `style="fill:#000000"`) with `fill="currentColor"` in a text editor. The logo will automatically inherit the theme color (`raisin`/`raisin-dark`).
+- **SVGs MUST have `width` and `height` attributes on the `<svg>` tag** (matching the `viewBox`). The carousel inlines SVGs with `w-auto h-auto`, which relies on intrinsic dimensions to size the element. An SVG with only a `viewBox` collapses to nothing and renders invisibly. SVGs exported by some tools (or scraped from a site) often have only a `viewBox` — add the dimensions back in.
 
 The carousel partial (`themes/alltuner-theme/layouts/partials/logo-carousel.html`) picks up the data automatically. The logo list is duplicated in HTML for seamless infinite scrolling — this is expected.
+
+> **Note:** `hugo serve` caches SVG contents (read via `os.ReadFile`) for the whole server session, so editing a logo SVG on disk does **not** hot-reload. Restart the server to see SVG changes.
