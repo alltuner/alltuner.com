@@ -60,3 +60,11 @@
 - name: Espai Sonor Català
   logo: espai-sonor-catala.svg
   url: "https://www.espaisonor.cat/"
+
+- name: Scape
+  logo: scape.svg
+  url: "https://scape.app/"
+
+- name: Trama
+  logo: trama.svg
+  url: "https://trama.barcelona/"
