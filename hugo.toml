@@ -111,6 +111,15 @@ knowsAbout = [
 
 # Projects (order here controls display order)
 [[params.projects]]
+name = "AppTape"
+description = "macOS app that records audio from any app or the whole system to clean MP3 files, entirely on your Mac."
+description_ca = "Aplicació per a macOS que grava l'àudio de qualsevol aplicació o de tot el sistema en fitxers MP3 nets, íntegrament al teu Mac."
+description_sv = "macOS-app som spelar in ljud från valfri app eller hela systemet till rena MP3-filer, helt lokalt på din Mac."
+description_es = "Aplicación para macOS que graba el audio de cualquier aplicación o de todo el sistema en archivos MP3 limpios, íntegramente en tu Mac."
+link = "https://apptape.alltuner.com"
+status = "active"
+
+[[params.projects]]
 name = "Factory Floor"
 description = "GPU-accelerated terminal dashboard for managing multiple projects from a single screen."
 description_ca = "Tauler de terminal accelerat per GPU per gestionar múltiples projectes des d'una sola pantalla."
