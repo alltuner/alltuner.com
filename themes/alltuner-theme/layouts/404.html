@@ -1,0 +1,37 @@
+{{/* ABOUTME: Layout for the not-found page, rendered to 404.html at the site root. */}}
+{{/* ABOUTME: Doubles as the error document of the bucket the site is served from. */}}
+
+{{ define "title" }}404 Not Found &mdash; {{ .Site.Title }}{{ end }}
+
+{{ define "content" }}
+<header class="flex items-center justify-center">
+  <div class="max-w-3xl mx-auto px-6 md:px-8 pt-24 md:pt-32 pb-10 md:pb-16 flex flex-col items-center text-center">
+    <!-- Logo -->
+    <a href="{{ "/" | relLangURL }}" class="animate-scale-in">
+      <img src="/statics/img/all-tuner-logo.svg"
+           alt="{{ .Site.Title }} Logo"
+           class="h-16 w-auto md:h-24 drop-shadow-sm dark:hidden"
+           width="1024"
+           height="1024" />
+      <img src="/statics/img/all-tuner-logo-dark.svg"
+           alt="{{ .Site.Title }} Logo"
+           class="h-16 w-auto md:h-24 drop-shadow-sm hidden dark:block"
+           width="1024"
+           height="1024" />
+    </a>
+
+    <h1 class="mt-12 md:mt-16 flex flex-col items-center gap-3 md:gap-5">
+      <span class="font-display text-[5.5rem] md:text-[10rem] font-light leading-none tracking-tight text-raisin dark:text-raisin-dark animate-fade-up"
+            style="animation-delay: 0.15s">404</span>
+      <span class="text-xs md:text-sm uppercase tracking-[0.35em] text-taupe animate-fade-up"
+            style="animation-delay: 0.3s">Not found</span>
+    </h1>
+
+    <!-- Decorative line -->
+    <div class="mt-10 md:mt-14 h-px w-24 bg-gradient-to-r from-transparent via-wine/50 to-transparent origin-center animate-draw-line" style="animation-delay: 0.45s" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main id="main" role="main">
+</main>
+{{ end }}
