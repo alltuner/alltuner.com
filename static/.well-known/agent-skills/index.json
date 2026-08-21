@@ -2,6 +2,13 @@
   "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
   "skills": [
     {
+      "name": "git-sprout",
+      "type": "skill-md",
+      "description": "Create git worktrees that share disk blocks with an existing checkout instead of copying the whole tree. Use when creating a worktree (`git worktree add`), when worktrees are eating disk, when a harness or script spawns one worktree per task or per agent, or when a large repository makes every checkout expensive. On the Linux kernel one worktree drops from 1816 MB to 36 MB.",
+      "url": "/.well-known/agent-skills/git-sprout/SKILL.md",
+      "digest": "sha256:1f4e98c83a4184e4f6fa427b521edecd118867f6ad4e4f3af1637d92c67404ef"
+    },
+    {
       "name": "vacant",
       "type": "skill-md",
       "description": "Check whether domain names are registered, available, reserved, or invalid. Use when the user asks if a domain is taken or free, wants to find an unregistered name, brainstorms project or product names that need a domain, screens candidates across many TLDs, or filters a list of domains to only the available ones. Queries authoritative TLD nameservers directly — fast, accurate, and not rate-limited like WHOIS.",
