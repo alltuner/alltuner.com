@@ -60,3 +60,12 @@ other = "Proyectos que tu apoyo ayuda a mantener"
 
 [minor_projects_title]
 other = "Software libre y herramientas que mantenemos"
+
+[not_found_title]
+other = "Página no encontrada"
+
+[not_found_body]
+other = "La página que has pedido se ha movido, se ha renombrado o nunca ha existido."
+
+[not_found_home]
+other = "Volver a la página de inicio"

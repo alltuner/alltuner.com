@@ -60,3 +60,12 @@ other = "Projectes que el teu suport ajuda a mantenir"
 
 [minor_projects_title]
 other = "Programari lliure i eines que mantenim"
+
+[not_found_title]
+other = "Pàgina no trobada"
+
+[not_found_body]
+other = "La pàgina que has demanat s'ha mogut, s'ha canviat de nom o no ha existit mai."
+
+[not_found_home]
+other = "Torna a la pàgina d'inici"

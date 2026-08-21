@@ -60,3 +60,12 @@ other = "Projects your support helps sustain"
 
 [minor_projects_title]
 other = "Free software & tools we maintain"
+
+[not_found_title]
+other = "Page not found"
+
+[not_found_body]
+other = "The page you asked for has moved, been renamed, or never existed."
+
+[not_found_home]
+other = "Back to the homepage"
