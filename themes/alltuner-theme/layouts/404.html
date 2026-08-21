@@ -1,11 +1,11 @@
 {{/* ABOUTME: Layout for the not-found page, rendered to 404.html at the site root. */}}
 {{/* ABOUTME: Doubles as the error document of the bucket the site is served from. */}}
 
-{{ define "title" }}{{ T "not_found_title" }} &mdash; {{ .Site.Title }}{{ end }}
+{{ define "title" }}404 Not Found &mdash; {{ .Site.Title }}{{ end }}
 
 {{ define "content" }}
 <header class="flex items-center justify-center">
-  <div class="max-w-3xl mx-auto px-6 md:px-8 pt-20 md:pt-28 pb-8 md:pb-12 flex flex-col items-center text-center">
+  <div class="max-w-3xl mx-auto px-6 md:px-8 pt-24 md:pt-32 pb-10 md:pb-16 flex flex-col items-center text-center">
     <!-- Logo -->
     <a href="{{ "/" | relLangURL }}" class="animate-scale-in">
       <img src="/statics/img/all-tuner-logo.svg"
@@ -20,27 +20,15 @@
            height="1024" />
     </a>
 
-    <p class="mt-10 md:mt-14 font-display text-6xl md:text-8xl font-light leading-none tracking-tight text-wine/20 dark:text-wine-light/25 animate-fade-up"
-       style="animation-delay: 0.1s"
-       aria-hidden="true">404</p>
-
-    <h1 class="mt-4 md:mt-6 font-display text-2xl md:text-4xl lg:text-5xl text-raisin dark:text-raisin-dark font-light leading-tight tracking-tight animate-fade-up" style="animation-delay: 0.2s">
-      {{ T "not_found_title" }}
+    <h1 class="mt-12 md:mt-16 flex flex-col items-center gap-3 md:gap-5">
+      <span class="font-display text-[5.5rem] md:text-[10rem] font-light leading-none tracking-tight text-raisin dark:text-raisin-dark animate-fade-up"
+            style="animation-delay: 0.15s">404</span>
+      <span class="text-xs md:text-sm uppercase tracking-[0.35em] text-taupe animate-fade-up"
+            style="animation-delay: 0.3s">Not found</span>
     </h1>
 
-    <p class="mt-4 md:mt-6 text-base md:text-lg text-taupe dark:text-taupe/90 font-normal max-w-lg animate-fade-up" style="animation-delay: 0.3s">
-      {{ T "not_found_body" }}
-    </p>
-
-    <a href="{{ "/" | relLangURL }}"
-       class="group mt-8 md:mt-10 inline-flex items-center gap-2 px-6 py-2.5 text-sm tracking-wide text-wine/80 dark:text-wine-light border border-wine/15 dark:border-wine-light/30 rounded-full bg-wine/[0.03] dark:bg-wine-light/[0.1] hover:bg-wine/[0.08] dark:hover:bg-wine-light/[0.18] hover:border-wine/25 dark:hover:border-wine-light/40 hover:text-wine dark:hover:text-wine-light transition-all duration-300 animate-fade-up"
-       style="animation-delay: 0.4s">
-      <span class="transition-transform duration-300 group-hover:-translate-x-0.5">&larr;</span>
-      {{ T "not_found_home" }}
-    </a>
-
     <!-- Decorative line -->
-    <div class="mt-8 md:mt-10 h-px w-24 bg-gradient-to-r from-transparent via-wine/50 to-transparent origin-center animate-draw-line" style="animation-delay: 0.5s" aria-hidden="true"></div>
+    <div class="mt-10 md:mt-14 h-px w-24 bg-gradient-to-r from-transparent via-wine/50 to-transparent origin-center animate-draw-line" style="animation-delay: 0.45s" aria-hidden="true"></div>
   </div>
 </header>
 

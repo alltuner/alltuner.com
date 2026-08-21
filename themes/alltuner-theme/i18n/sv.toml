@@ -60,12 +60,3 @@ other = "Projekt som ditt stöd hjälper till att underhålla"
 
 [minor_projects_title]
 other = "Fri programvara och verktyg vi underhåller"
-
-[not_found_title]
-other = "Sidan hittades inte"
-
-[not_found_body]
-other = "Sidan du sökte har flyttats, bytt namn eller har aldrig funnits."
-
-[not_found_home]
-other = "Tillbaka till startsidan"
