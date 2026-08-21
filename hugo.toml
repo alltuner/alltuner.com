@@ -122,12 +122,21 @@ status = "active"
 
 [[params.projects]]
 name = "Factory Floor"
-description = "GPU-accelerated terminal dashboard for managing multiple projects from a single screen."
-description_ca = "Tauler de terminal accelerat per GPU per gestionar múltiples projectes des d'una sola pantalla."
-description_sv = "GPU-accelererad terminalpanel för att hantera flera projekt från en enda skärm."
-description_es = "Panel de terminal acelerado por GPU para gestionar múltiples proyectos desde una sola pantalla."
+description = "AI-powered development workspace for macOS: git worktrees, Claude Code sessions and dev servers in a single native app."
+description_ca = "Espai de treball per a macOS amb IA: worktrees de git, sessions de Claude Code i servidors de desenvolupament en una sola aplicació nativa."
+description_sv = "AI-driven utvecklingsmiljö för macOS: git-worktrees, Claude Code-sessioner och utvecklingsservrar i en enda inbyggd app."
+description_es = "Espacio de trabajo para macOS con IA: worktrees de git, sesiones de Claude Code y servidores de desarrollo en una sola aplicación nativa."
 link = "https://factory-floor.com"
-status = "beta"
+status = "active"
+
+[[params.projects]]
+name = "git-sprout"
+description = "Drop-in replacement for git worktree add that shares disk blocks instead of copying your tree. On the Linux kernel, 1816 MB becomes 36 MB."
+description_ca = "Substitut directe de git worktree add que comparteix blocs de disc en lloc de copiar l'arbre de treball. Amb el nucli de Linux, 1816 MB passen a ser 36 MB."
+description_sv = "Direkt ersättning för git worktree add som delar diskblock i stället för att kopiera ditt arbetsträd. På Linux-kärnan blir 1816 MB till 36 MB."
+description_es = "Sustituto directo de git worktree add que comparte bloques de disco en lugar de copiar tu árbol de trabajo. Con el kernel de Linux, 1816 MB pasan a ser 36 MB."
+link = "https://sprout.alltuner.com"
+status = "active"
 
 [[params.projects]]
 name = "Radar de la Música"
