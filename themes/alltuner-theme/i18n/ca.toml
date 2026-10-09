@@ -60,3 +60,9 @@ other = "Projectes que el teu suport ajuda a mantenir"
 
 [minor_projects_title]
 other = "Programari lliure i eines que mantenim"
+
+[featured_title]
+other = "Algunes coses que estem construint"
+
+[more_projects]
+other = "Més projectes"

@@ -60,3 +60,9 @@ other = "Projekt som ditt stöd hjälper till att underhålla"
 
 [minor_projects_title]
 other = "Fri programvara och verktyg vi underhåller"
+
+[featured_title]
+other = "Några saker vi bygger"
+
+[more_projects]
+other = "Fler projekt"

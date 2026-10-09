@@ -1,6 +1,6 @@
 # All Tuner Labs
 
-Hugo static site with Tailwind CSS v4. Supports 3 languages: en, ca, es.
+Hugo static site with Tailwind CSS v4. Supports 4 languages: en, ca, sv, es.
 
 ## Logo Carousel
 
@@ -30,3 +30,15 @@ The homepage has a CSS-only scrolling logo carousel. To add a new logo:
 The carousel partial (`themes/alltuner-theme/layouts/partials/logo-carousel.html`) picks up the data automatically. The logo list is duplicated in HTML for seamless infinite scrolling — this is expected.
 
 > **Note:** `hugo serve` caches SVG contents (read via `os.ReadFile`) for the whole server session, so editing a logo SVG on disk does **not** hot-reload. Restart the server to see SVG changes.
+
+## Share images
+
+Pages can set their own Open Graph image with `og_image` and `og_image_alt` in front matter; everything else uses `alltuner-og-image.png`. The Audis images are rendered from `scripts/og/audis.html` (one per language, `?lang=en|ca|sv|es`) with headless Chrome:
+
+```sh
+for l in en ca sv es; do
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars \
+    --allow-file-access-from-files --virtual-time-budget=3000 --window-size=1200,630 \
+    --screenshot="$PWD/static/statics/img/og/audis-$l.png" "file://$PWD/scripts/og/audis.html?lang=$l"
+done
+```

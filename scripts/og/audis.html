@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- ABOUTME: 1200x630 share image for the Audis landing page; ?lang=en|ca|sv|es picks the tagline. -->
+<!-- ABOUTME: Rendered to static/statics/img/og/audis-<lang>.png with headless Chrome (see AGENTS.md). -->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Fraunces"; src: url("../../static/fonts/fraunces-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; }
+  @font-face { font-family: "Fraunces"; src: url("../../static/fonts/fraunces-latin-ext-wght-normal.woff2") format("woff2"); font-weight: 100 900; unicode-range: U+0100-024F, U+1E00-1EFF; }
+  @font-face { font-family: "Instrument Sans"; src: url("../../static/fonts/instrument-sans-latin-wght-normal.woff2") format("woff2"); font-weight: 400 700; }
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: radial-gradient(ellipse 70% 60% at 50% -10%, rgba(91, 35, 51, 0.16), transparent 70%), #f7f4f3;
+    color: #2c2826; font-family: "Instrument Sans", sans-serif;
+    display: flex; flex-direction: column; justify-content: center; padding: 0 96px; box-sizing: border-box; position: relative;
+  }
+  .brand { display: flex; align-items: center; gap: 18px; }
+  .brand img { height: 80px; }
+  h1 { margin: 18px 0 0; font-family: "Fraunces", serif; font-weight: 300; font-size: 200px; line-height: 0.95; letter-spacing: -0.02em; color: #5b2333; }
+  p { margin: 28px 0 0; font-family: "Fraunces", serif; font-weight: 300; font-size: 48px; line-height: 1.15; max-width: 660px; text-wrap: balance; }
+  .wave { position: absolute; right: 96px; bottom: 120px; display: flex; align-items: flex-end; gap: 10px; height: 220px; }
+  .wave i { display: block; width: 12px; border-radius: 6px; background: rgba(91, 35, 51, 0.35); }
+</style>
+</head>
+<body>
+  <div class="brand"><img src="../../static/statics/img/all-tuner-logo.svg" alt=""></div>
+  <h1>Audis</h1>
+  <p id="tagline"></p>
+  <div class="wave" id="wave"></div>
+  <script>
+    var taglines = {
+      en: "Your collection, told aloud.",
+      ca: "La vostra col·lecció, explicada en veu alta.",
+      sv: "Er samling, berättad högt.",
+      es: "Su colección, contada en voz alta."
+    };
+    var lang = new URLSearchParams(location.search).get("lang") || "en";
+    document.documentElement.lang = lang;
+    document.getElementById("tagline").textContent = taglines[lang];
+    [3, 5, 8, 4, 7, 10, 6, 9, 5, 7, 3, 6, 4].forEach(function (h) {
+      var bar = document.createElement("i");
+      bar.style.height = h * 10 + "%";
+      document.getElementById("wave").appendChild(bar);
+    });
+  </script>
+</body>
+</html>

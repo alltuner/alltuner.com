@@ -3,6 +3,7 @@ title = "All Tuner Labs"
 theme = "alltuner-theme"
 disableHugoGeneratorInject = true
 enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
 ignoreFiles = ["CLAUDE\\.md", "AGENTS\\.md"]
 
 defaultContentLanguage = "en"
@@ -13,6 +14,7 @@ defaultContentLanguageInSubdir = false
     weight = 1
     languageCode = "en"
     languageName = "English"
+    contentDir = "content/en"
   [languages.ca]
     weight = 2
     languageCode = "ca"
@@ -58,26 +60,6 @@ name = "X"
 url = "https://x.com/alltuner_labs"
 icon = "x"
 
-[[params.alternates]]
-hreflang = "en"
-href = "https://alltuner.com/"
-
-[[params.alternates]]
-hreflang = "ca"
-href = "https://alltuner.com/ca/"
-
-[[params.alternates]]
-hreflang = "sv"
-href = "https://alltuner.com/sv/"
-
-[[params.alternates]]
-hreflang = "es"
-href = "https://alltuner.com/es/"
-
-[[params.alternates]]
-hreflang = "x-default"
-href = "https://alltuner.com/"
-
 [params.jsonld]
 orgName = "All Tuner Labs"
 orgDescription = "Smoothing rough edges through lean technology and craft."
@@ -112,7 +94,18 @@ knowsAbout = [
 
 # Projects (order here controls display order)
 [[params.projects]]
+name = "Audis"
+featured = true
+description = "Narrated tours, object stories and podcast-style episodes for museums and cultural institutions, written for each collection and voiced in their visitors' languages."
+description_ca = "Visites, històries d'objectes i episodis a l'estil d'un pòdcast per a museus i institucions culturals, escrits per a cada col·lecció i narrats en les llengües dels seus visitants."
+description_sv = "Ljudguider, berättelser om föremål och poddliknande avsnitt för museer och kulturinstitutioner, skrivna för varje samling och inlästa på besökarnas språk."
+description_es = "Visitas, historias de objetos y episodios al estilo de un pódcast para museos e instituciones culturales, escritos para cada colección y narrados en los idiomas de sus visitantes."
+link = "/audis/"
+status = "developing"
+
+[[params.projects]]
 name = "AppTape"
+featured = true
 description = "macOS app that records audio from any app or the whole system to clean MP3 files, entirely on your Mac."
 description_ca = "Aplicació per a macOS que grava l'àudio de qualsevol aplicació o de tot el sistema en fitxers MP3 nets, íntegrament al teu Mac."
 description_sv = "macOS-app som spelar in ljud från valfri app eller hela systemet till rena MP3-filer, helt lokalt på din Mac."

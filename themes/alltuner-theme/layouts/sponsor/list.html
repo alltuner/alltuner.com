@@ -1,8 +1,6 @@
 {{/* ABOUTME: Layout for the funding/support page. */}}
 {{/* ABOUTME: Displays financial support options for All Tuner Labs' open source work. */}}
 
-{{ define "title" }}{{ .Title }} &mdash; {{ .Site.Title }}{{ end }}
-
 {{ define "content" }}
 <header class="flex items-center justify-center">
   <div class="max-w-3xl mx-auto px-6 md:px-8 pt-20 md:pt-28 pb-8 md:pb-12 flex flex-col items-center text-center">
@@ -68,7 +66,7 @@
     <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
       {{- range .Site.Params.projects }}
       {{- if .link }}
-      <a href="{{ .link }}" class="text-sm text-taupe/70 dark:text-taupe/80 hover:text-wine dark:hover:text-wine-light transition-colors duration-300">{{ .name }}</a>
+      <a href="{{ partial "project-href.html" .link }}" class="text-sm text-taupe/70 dark:text-taupe/80 hover:text-wine dark:hover:text-wine-light transition-colors duration-300">{{ .name }}</a>
       {{- else }}
       <span class="text-sm text-taupe/50">{{ .name }}</span>
       {{- end }}

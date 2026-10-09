@@ -68,3 +68,15 @@
 - name: Trama
   logo: trama.svg
   url: "https://trama.barcelona/"
+
+- name: Quantum Makers
+  logo: quantum-makers.png
+  url: "https://www.quantummakers.com"
+
+- name: heydiga
+  logo: heydiga.svg
+  url: "https://heydiga.com"
+
+- name: Saraos Society
+  logo: saraos-society.svg
+  url: "https://www.saraos-society.com"

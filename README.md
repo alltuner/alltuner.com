@@ -33,7 +33,7 @@ bun run clean              # remove the public/ output
 
 ```
 alltuner.com/
-├── content/               # Markdown content (per-language subdirs under content/ca, content/es)
+├── content/               # Markdown content, one subdir per language (content/en, content/ca, content/sv, content/es)
 ├── css/                   # Tailwind input
 ├── data/                  # Hugo data files
 ├── static/                # Static assets served as-is
