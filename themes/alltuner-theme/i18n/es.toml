@@ -62,4 +62,7 @@ other = "Proyectos que tu apoyo ayuda a mantener"
 other = "Software libre y herramientas que mantenemos"
 
 [featured_title]
-other = "Qué estamos construyendo"
+other = "Algunas cosas que estamos construyendo"
+
+[more_projects]
+other = "Más proyectos"

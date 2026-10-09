@@ -62,4 +62,7 @@ other = "Projekt som ditt stöd hjälper till att underhålla"
 other = "Fri programvara och verktyg vi underhåller"
 
 [featured_title]
-other = "Det här bygger vi"
+other = "Några saker vi bygger"
+
+[more_projects]
+other = "Fler projekt"
