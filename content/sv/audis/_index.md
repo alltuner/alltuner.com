@@ -19,5 +19,4 @@ steps:
   - "Ni får en privat sida i er egen stil, för att lyssna, dela och bestämma."
 cta_title: "Vill ni höra er egen samling?"
 cta_button: "Skriv till oss"
-demo_note: "Om ni har fått en länk till en privat demo från oss är det ett exempel som All Tuner Labs har tagit fram. Ni kan när som helst be oss ta bort den."
 ---

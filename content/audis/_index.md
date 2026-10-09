@@ -19,5 +19,4 @@ steps:
   - "You get a private page in your own look, to listen, share and decide."
 cta_title: "Want to hear your own collection?"
 cta_button: "Write to us"
-demo_note: "If you received a private demo link from us, it is a sample prepared by All Tuner Labs. You can ask us to remove it at any time."
 ---

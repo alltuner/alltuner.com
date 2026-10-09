@@ -19,5 +19,4 @@ steps:
   - "Rebeu una pàgina privada amb la vostra imatge per escoltar, compartir i decidir."
 cta_title: "Voleu sentir la vostra pròpia col·lecció?"
 cta_button: "Escriviu-nos"
-demo_note: "Si heu rebut de part nostra l'enllaç a una demostració privada, és una mostra preparada per All Tuner Labs. Podeu demanar-nos que la retirem en qualsevol moment."
 ---
