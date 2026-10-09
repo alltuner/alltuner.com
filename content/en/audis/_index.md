@@ -1,7 +1,10 @@
 ---
 title: "Audis"
-description: "Narrated tours, object stories and podcast-style episodes for museums and cultural institutions, written for each collection and voiced in your visitors' languages."
+meta_title: "AllTuner Audis: narrated audio tours and stories for museums"
+description: "Narrated tours, object stories and podcast-style episodes for museums and cultural institutions, voiced in your visitors' languages."
+outputs: [html]
 translationKey: audis
+service_name: "AllTuner Audis"
 headline: "Your collection, told aloud."
 lead: "Narrated tours, object stories and podcast-style episodes, written for your institution and voiced in the languages your visitors speak, with subtitles that follow every word."
 features:

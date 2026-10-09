@@ -1,7 +1,10 @@
 ---
 title: "Audis"
-description: "Ljudguider, berättelser om föremål och poddliknande avsnitt för museer och kulturinstitutioner, skrivna för varje samling och inlästa på era besökares språk."
+meta_title: "AllTuner Audis: ljudguider och berättelser för museer"
+description: "Ljudguider, berättelser om föremål och poddliknande avsnitt för museer och kulturinstitutioner, inlästa på era besökares språk."
+outputs: [html]
 translationKey: audis
+service_name: "AllTuner Audis"
 headline: "Er samling, berättad högt."
 lead: "Ljudguider, berättelser om föremål och poddliknande avsnitt, skrivna för er institution och inlästa på de språk era besökare talar, med undertexter som följer varje ord."
 features:

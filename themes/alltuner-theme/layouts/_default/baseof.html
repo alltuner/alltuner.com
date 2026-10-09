@@ -6,21 +6,33 @@
   <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
   <script>(function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark')})()</script>
   <link rel="mask-icon" href="/statics/img/safari-pinned-tab.svg" color="#5B2333" />
+  {{- $title := .Params.meta_title | default (printf "%s &mdash; %s" .Title .Site.Title) }}
+  {{- if eq .Kind "404" }}{{ $title = printf "404 Not Found &mdash; %s" .Site.Title }}{{ end }}
+  {{- $description := .Params.description | default .Site.Params.description }}
+  {{- $ogLocales := dict "en" "en_US" "ca" "ca_ES" "sv" "sv_SE" "es" "es_ES" }}
+  {{- if eq .Kind "404" }}
+  <meta name="robots" content="noindex" />
+  {{- else }}
   <link rel="canonical" href="{{ .Permalink }}" />
-  <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
-  {{- range .Translations }}
+  {{- range .AllTranslations }}
   <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
   {{- end }}
+  {{- range where .AllTranslations "Language.Lang" hugo.Sites.Default.Language.Lang }}
   <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
-  <title>{{ block "title" . }}{{ .Site.Title }} - Lean Technology and Craft{{ end }}</title>
-  <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
-  <meta name="keywords" content="technology consultancy, product studio, reliability, SRE" />
+  {{- end }}
+  {{- end }}
+  <title>{{ $title | safeHTML }}</title>
+  <meta name="description" content="{{ $description }}" />
   <!-- OpenGraph -->
-  <meta property="og:title" content="{{ .Site.Title }}" />
-  <meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+  <meta property="og:title" content="{{ $title | safeHTML }}" />
+  <meta property="og:description" content="{{ $description }}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ .Permalink }}" />
   <meta property="og:site_name" content="{{ .Site.Title }}" />
+  <meta property="og:locale" content="{{ index $ogLocales .Language.Lang }}" />
+  {{- range .Translations }}
+  <meta property="og:locale:alternate" content="{{ index $ogLocales .Language.Lang }}" />
+  {{- end }}
   <meta property="og:image" content="https://alltuner.com/statics/img/alltuner-og-image.png" />
   <meta property="og:image:secure_url" content="https://alltuner.com/statics/img/alltuner-og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -28,8 +40,8 @@
   <meta property="og:image:alt" content="{{ .Site.Title }} — Lean Technology and Craft" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="{{ .Site.Title }} - Lean Technology and Craft" />
-  <meta name="twitter:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+  <meta name="twitter:title" content="{{ $title | safeHTML }}" />
+  <meta name="twitter:description" content="{{ $description }}" />
   {{- with .Site.Params.twitter }}
   <meta name="twitter:site" content="{{ . }}" />
   <meta name="twitter:creator" content="{{ . }}" />
@@ -69,7 +81,19 @@
     "description" "Production-ready FastAPI + MongoDB + HTMX project scaffolding in seconds."
     "publisher" (dict "@id" "https://alltuner.com/#org")
   -}}
-  {{- $jsonld := dict "@context" "https://schema.org" "@graph" (slice $org $website $app) -}}
+  {{- $graph := slice $org $website $app -}}
+  {{- with $.Params.service_name }}
+  {{- $graph = $graph | append (dict
+    "@type" "Service"
+    "@id" (printf "%s#service" $.Permalink)
+    "name" .
+    "description" $description
+    "url" $.Permalink
+    "inLanguage" $.Language.Lang
+    "provider" (dict "@id" "https://alltuner.com/#org")
+  ) -}}
+  {{- end }}
+  {{- $jsonld := dict "@context" "https://schema.org" "@graph" $graph -}}
   <script type="application/ld+json">{{ $jsonld | jsonify | safeJS }}</script>
   {{- end }}
   <link rel="icon" href="/favicon.ico" sizes="any" />

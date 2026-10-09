@@ -1,7 +1,10 @@
 ---
 title: "Audis"
-description: "Visites, històries d'objectes i episodis a l'estil d'un pòdcast per a museus i institucions culturals, escrits per a cada col·lecció i narrats en les llengües dels vostres visitants."
+meta_title: "AllTuner Audis: visites i relats narrats per a museus"
+description: "Visites, històries d'objectes i episodis a l'estil d'un pòdcast per a museus i institucions culturals, narrats en les llengües dels vostres visitants."
+outputs: [html]
 translationKey: audis
+service_name: "AllTuner Audis"
 headline: "La vostra col·lecció, explicada en veu alta."
 lead: "Visites, històries d'objectes i episodis a l'estil d'un pòdcast, escrits per a la vostra institució i narrats en les llengües que parlen els vostres visitants, amb subtítols que segueixen cada paraula."
 features:
