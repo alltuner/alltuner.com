@@ -5,6 +5,8 @@ description: "Visitas, historias de objetos y episodios al estilo de un pódcast
 outputs: [html]
 translationKey: audis
 service_name: "AllTuner Audis"
+og_image: "/statics/img/og/audis-es.png"
+og_image_alt: "AllTuner Audis. Su colección, contada en voz alta."
 headline: "Su colección, contada en voz alta."
 lead: "Visitas, historias de objetos y episodios al estilo de un pódcast, escritos para su institución y narrados en los idiomas que hablan sus visitantes, con subtítulos que siguen cada palabra."
 features:

@@ -5,6 +5,8 @@ description: "Narrated tours, object stories and podcast-style episodes for muse
 outputs: [html]
 translationKey: audis
 service_name: "AllTuner Audis"
+og_image: "/statics/img/og/audis-en.png"
+og_image_alt: "AllTuner Audis. Your collection, told aloud."
 headline: "Your collection, told aloud."
 lead: "Narrated tours, object stories and podcast-style episodes, written for your institution and voiced in the languages your visitors speak, with subtitles that follow every word."
 features:

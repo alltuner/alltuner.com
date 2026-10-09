@@ -5,6 +5,8 @@ description: "Ljudguider, berättelser om föremål och poddliknande avsnitt fö
 outputs: [html]
 translationKey: audis
 service_name: "AllTuner Audis"
+og_image: "/statics/img/og/audis-sv.png"
+og_image_alt: "AllTuner Audis. Er samling, berättad högt."
 headline: "Er samling, berättad högt."
 lead: "Ljudguider, berättelser om föremål och poddliknande avsnitt, skrivna för er institution och inlästa på de språk era besökare talar, med undertexter som följer varje ord."
 features:
