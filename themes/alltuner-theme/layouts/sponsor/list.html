@@ -68,7 +68,7 @@
     <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
       {{- range .Site.Params.projects }}
       {{- if .link }}
-      <a href="{{ .link }}" class="text-sm text-taupe/70 dark:text-taupe/80 hover:text-wine dark:hover:text-wine-light transition-colors duration-300">{{ .name }}</a>
+      <a href="{{ partial "project-href.html" .link }}" class="text-sm text-taupe/70 dark:text-taupe/80 hover:text-wine dark:hover:text-wine-light transition-colors duration-300">{{ .name }}</a>
       {{- else }}
       <span class="text-sm text-taupe/50">{{ .name }}</span>
       {{- end }}

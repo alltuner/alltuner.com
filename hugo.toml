@@ -121,6 +121,15 @@ link = "https://apptape.alltuner.com"
 status = "active"
 
 [[params.projects]]
+name = "Audis"
+description = "Narrated tours, object stories and podcast-style episodes for museums and cultural institutions, written for each collection and voiced in their visitors' languages."
+description_ca = "Visites, històries d'objectes i episodis a l'estil d'un pòdcast per a museus i institucions culturals, escrits per a cada col·lecció i narrats en les llengües dels seus visitants."
+description_sv = "Berättade visningar, föremålsberättelser och poddliknande avsnitt för museer och kulturinstitutioner, skrivna för varje samling och inlästa på besökarnas språk."
+description_es = "Visitas, historias de objetos y episodios al estilo de un pódcast para museos e instituciones culturales, escritos para cada colección y narrados en los idiomas de sus visitantes."
+link = "/audis/"
+status = "developing"
+
+[[params.projects]]
 name = "Factory Floor"
 description = "AI-powered development workspace for macOS: git worktrees, Claude Code sessions and dev servers in a single native app."
 description_ca = "Espai de treball per a macOS amb IA: worktrees de git, sessions de Claude Code i servidors de desenvolupament en una sola aplicació nativa."

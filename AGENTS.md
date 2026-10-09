@@ -1,6 +1,6 @@
 # All Tuner Labs
 
-Hugo static site with Tailwind CSS v4. Supports 3 languages: en, ca, es.
+Hugo static site with Tailwind CSS v4. Supports 4 languages: en, ca, sv, es.
 
 ## Logo Carousel
 

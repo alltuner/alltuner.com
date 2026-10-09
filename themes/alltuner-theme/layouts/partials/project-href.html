@@ -1,0 +1,3 @@
+{{- /* ABOUTME: Resolves a project link: site paths ("/audis/") go to the reader's language, external URLs pass through. */ -}}
+{{- /* ABOUTME: Takes the link string as its context. */ -}}
+{{- if hasPrefix . "/" }}{{ relLangURL . }}{{ else }}{{ . }}{{ end -}}

@@ -1,0 +1,23 @@
+---
+title: "Audis"
+description: "Visites, històries d'objectes i episodis a l'estil d'un pòdcast per a museus i institucions culturals, escrits per a cada col·lecció i narrats en les llengües dels vostres visitants."
+translationKey: audis
+headline: "La vostra col·lecció, explicada en veu alta."
+lead: "Visites, històries d'objectes i episodis a l'estil d'un pòdcast, escrits per a la vostra institució i narrats en les llengües que parlen els vostres visitants, amb subtítols que segueixen cada paraula."
+features:
+  - title: "Escrits per a la vostra col·lecció"
+    text: "Cada sèrie neix d'una recerca sobre la vostra institució: els seus objectes, la seva gent i les seves històries. El nostre equip revisa cada dada i cada guió abans d'enregistrar res."
+  - title: "En les llengües dels vostres visitants"
+    text: "Cada llengua té el seu propi guió, no una traducció literal, llegit per una veu d'IA càlida i expressiva."
+  - title: "Subtítols que segueixen cada paraula"
+    text: "Cada episodi inclou la transcripció i uns subtítols sincronitzats amb la veu, perquè funcioni sense so i per a visitants amb dificultats auditives."
+steps_title: "Com funciona"
+steps:
+  - "Estudiem la vostra institució i us proposem una sèrie d'episodis."
+  - "Escrivim els guions i els revisem, dada per dada."
+  - "Enregistrem els episodis i sincronitzem els subtítols amb la veu."
+  - "Rebeu una pàgina privada amb la vostra imatge per escoltar, compartir i decidir."
+cta_title: "Voleu sentir la vostra pròpia col·lecció?"
+cta_button: "Escriviu-nos"
+demo_note: "Si heu rebut de part nostra l'enllaç a una demostració privada, és una mostra preparada per All Tuner Labs. Podeu demanar-nos que la retirem en qualsevol moment."
+---
