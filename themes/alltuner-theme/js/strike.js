@@ -101,15 +101,14 @@ function fillFork(ctx, s) {
 }
 
 // ---------------------------------------------------------------- sound
-// The Strike WAV, decoded once and played from memory so it lands with the click.
-// Its strike starts at 0.70 s (after the tap), so playback skips straight to it.
-const STRIKE_WAV = 'https://brand.alltuner.com/ident/strike-stereo.wav'
-const STRIKE_OFFSET = 0.695
+// The Strike sound: brand.alltuner.com/ident/strike-stereo.wav trimmed to the strike
+// (from 0.695 s, after the tap) and encoded as a 44 KB MP3. It is fetched and decoded
+// on load, so it plays the moment the fork is clicked.
+const STRIKE_SOUND = '/statics/audio/strike.mp3'
 const VOLUME = 0.35
 const SOUND_KEY = 'sound'
 
 let audioCtx = null
-let strikeBytes = null
 let strikeBuffer = null
 
 // Sound is on unless the visitor has turned it off.
@@ -127,21 +126,12 @@ function setSoundOn(on) {
   } catch {}
 }
 
-// The WAV is ~835 KB, so it is fetched on the first sign of intent rather than on load.
-function fetchSound() {
-  strikeBytes ??= fetch(STRIKE_WAV)
-    .then((r) => r.arrayBuffer())
-    .catch((e) => {
-      strikeBytes = null
-      throw e
-    })
-  return strikeBytes
-}
-
+// Decoding with an OfflineAudioContext needs no user gesture, so it can happen before
+// the first click; the decoded buffer then plays in the real AudioContext.
 function loadSound() {
-  audioCtx ??= new AudioContext()
-  strikeBuffer ??= fetchSound()
-    .then((b) => audioCtx.decodeAudioData(b))
+  strikeBuffer ??= fetch(STRIKE_SOUND)
+    .then((r) => r.arrayBuffer())
+    .then((b) => new OfflineAudioContext(2, 1, 48000).decodeAudioData(b))
     .catch((e) => {
       strikeBuffer = null
       throw e
@@ -160,7 +150,7 @@ async function playStrike() {
   gain.gain.value = VOLUME
   src.buffer = buffer
   src.connect(gain).connect(audioCtx.destination)
-  src.start(0, STRIKE_OFFSET)
+  src.start()
 }
 
 // ---------------------------------------------------------------- the hero
@@ -273,10 +263,6 @@ function startFork(stage) {
     kick()
   }
 
-  const prefetch = () => {
-    if (soundOn()) fetchSound().catch(() => {})
-  }
-  for (const type of ['pointerenter', 'pointerdown', 'focus']) stage.addEventListener(type, prefetch)
   stage.addEventListener('click', () => strike())
   stage.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -321,6 +307,7 @@ function startSoundToggle(button, strike) {
     if (soundOn()) strike?.()
   })
   sync()
+  if (soundOn()) loadSound().catch(() => {})
 }
 
 function startSkyline(skyline) {
