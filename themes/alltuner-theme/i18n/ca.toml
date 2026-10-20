@@ -66,3 +66,12 @@ other = "Algunes coses que estem construint"
 
 [more_projects]
 other = "Més projectes"
+
+[strike_hint]
+other = "Colpeja el diapasó"
+
+[strike_label]
+other = "La marca d'All Tuner. Activa-la per colpejar el diapasó."
+
+[toggle_sound]
+other = "Activar o desactivar el so"
