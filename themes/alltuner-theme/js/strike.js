@@ -109,40 +109,56 @@ const VOLUME = 0.35
 const SOUND_KEY = 'sound'
 
 let audioCtx = null
+let strikeBytes = null
 let strikeBuffer = null
 
+// Sound is on unless the visitor has turned it off.
 function soundOn() {
   try {
-    return localStorage.getItem(SOUND_KEY) === 'on'
+    return localStorage.getItem(SOUND_KEY) !== 'off'
   } catch {
-    return false
+    return true
   }
 }
 
 function setSoundOn(on) {
   try {
-    if (on) localStorage.setItem(SOUND_KEY, 'on')
-    else localStorage.removeItem(SOUND_KEY)
+    localStorage.setItem(SOUND_KEY, on ? 'on' : 'off')
   } catch {}
 }
 
-async function loadSound() {
-  audioCtx ??= new AudioContext()
-  strikeBuffer ??= await fetch(STRIKE_WAV)
+// The WAV is ~835 KB, so it is fetched on the first sign of intent rather than on load.
+function fetchSound() {
+  strikeBytes ??= fetch(STRIKE_WAV)
     .then((r) => r.arrayBuffer())
+    .catch((e) => {
+      strikeBytes = null
+      throw e
+    })
+  return strikeBytes
+}
+
+function loadSound() {
+  audioCtx ??= new AudioContext()
+  strikeBuffer ??= fetchSound()
     .then((b) => audioCtx.decodeAudioData(b))
+    .catch((e) => {
+      strikeBuffer = null
+      throw e
+    })
+  return strikeBuffer
 }
 
 async function playStrike() {
   // Resume before any await, while the click still counts as the user's gesture.
   audioCtx ??= new AudioContext()
   const resumed = audioCtx.resume()
-  await loadSound()
+  const buffer = await loadSound()
   await resumed
   const src = audioCtx.createBufferSource()
   const gain = audioCtx.createGain()
   gain.gain.value = VOLUME
-  src.buffer = strikeBuffer
+  src.buffer = buffer
   src.connect(gain).connect(audioCtx.destination)
   src.start(0, STRIKE_OFFSET)
 }
@@ -257,6 +273,10 @@ function startFork(stage) {
     kick()
   }
 
+  const prefetch = () => {
+    if (soundOn()) fetchSound().catch(() => {})
+  }
+  for (const type of ['pointerenter', 'pointerdown', 'focus']) stage.addEventListener(type, prefetch)
   stage.addEventListener('click', () => strike())
   stage.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -301,7 +321,6 @@ function startSoundToggle(button, strike) {
     if (soundOn()) strike?.()
   })
   sync()
-  if (soundOn()) loadSound().catch(() => {})
 }
 
 function startSkyline(skyline) {
