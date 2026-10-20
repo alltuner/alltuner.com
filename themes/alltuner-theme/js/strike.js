@@ -101,50 +101,56 @@ function fillFork(ctx, s) {
 }
 
 // ---------------------------------------------------------------- sound
-// The Strike WAV, decoded once and played from memory so it lands with the click.
-// Its strike starts at 0.70 s (after the tap), so playback skips straight to it.
-const STRIKE_WAV = 'https://brand.alltuner.com/ident/strike-stereo.wav'
-const STRIKE_OFFSET = 0.695
+// The Strike sound: brand.alltuner.com/ident/strike-stereo.wav trimmed to the strike
+// (from 0.695 s, after the tap) and encoded as a 44 KB MP3. It is fetched and decoded
+// on load, so it plays the moment the fork is clicked.
+const STRIKE_SOUND = '/statics/audio/strike.mp3'
 const VOLUME = 0.35
 const SOUND_KEY = 'sound'
 
 let audioCtx = null
 let strikeBuffer = null
 
+// Sound is on unless the visitor has turned it off.
 function soundOn() {
   try {
-    return localStorage.getItem(SOUND_KEY) === 'on'
+    return localStorage.getItem(SOUND_KEY) !== 'off'
   } catch {
-    return false
+    return true
   }
 }
 
 function setSoundOn(on) {
   try {
-    if (on) localStorage.setItem(SOUND_KEY, 'on')
-    else localStorage.removeItem(SOUND_KEY)
+    localStorage.setItem(SOUND_KEY, on ? 'on' : 'off')
   } catch {}
 }
 
-async function loadSound() {
-  audioCtx ??= new AudioContext()
-  strikeBuffer ??= await fetch(STRIKE_WAV)
+// Decoding with an OfflineAudioContext needs no user gesture, so it can happen before
+// the first click; the decoded buffer then plays in the real AudioContext.
+function loadSound() {
+  strikeBuffer ??= fetch(STRIKE_SOUND)
     .then((r) => r.arrayBuffer())
-    .then((b) => audioCtx.decodeAudioData(b))
+    .then((b) => new OfflineAudioContext(2, 1, 48000).decodeAudioData(b))
+    .catch((e) => {
+      strikeBuffer = null
+      throw e
+    })
+  return strikeBuffer
 }
 
 async function playStrike() {
   // Resume before any await, while the click still counts as the user's gesture.
   audioCtx ??= new AudioContext()
   const resumed = audioCtx.resume()
-  await loadSound()
+  const buffer = await loadSound()
   await resumed
   const src = audioCtx.createBufferSource()
   const gain = audioCtx.createGain()
   gain.gain.value = VOLUME
-  src.buffer = strikeBuffer
+  src.buffer = buffer
   src.connect(gain).connect(audioCtx.destination)
-  src.start(0, STRIKE_OFFSET)
+  src.start()
 }
 
 // ---------------------------------------------------------------- the hero
