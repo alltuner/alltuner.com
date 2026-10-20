@@ -66,3 +66,12 @@ other = "Några saker vi bygger"
 
 [more_projects]
 other = "Fler projekt"
+
+[strike_hint]
+other = "Slå an stämgaffeln"
+
+[strike_label]
+other = "All Tuners märke. Aktivera för att slå an stämgaffeln."
+
+[toggle_sound]
+other = "Slå på eller av ljud"

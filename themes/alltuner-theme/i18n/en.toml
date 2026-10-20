@@ -66,3 +66,12 @@ other = "Some things we're building"
 
 [more_projects]
 other = "More projects"
+
+[strike_hint]
+other = "Strike the fork"
+
+[strike_label]
+other = "The All Tuner mark. Activate to strike the tuning fork."
+
+[toggle_sound]
+other = "Toggle sound"

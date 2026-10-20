@@ -98,3 +98,74 @@
     background: radial-gradient(ellipse 70% 50% at 50% 100%, var(--color-taupe) 0%, transparent 50%);
   }
 }
+
+/* Struck fork hero (js/strike.js). Without JS the static logo shows instead. */
+.strike-live {
+  --d: min(42vw, 196px);
+  display: none;
+}
+.js .strike-live { display: flex; }
+.js .strike-static { display: none; }
+
+.strike-stage {
+  position: relative;
+  width: var(--d);
+  height: var(--d);
+  border-radius: 50%;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.strike-stage:focus-visible {
+  outline: 2px solid var(--color-wine);
+  outline-offset: 8px;
+}
+/* The canvas overflows the stage so ripples spread behind the text, fading out before its edges. */
+.strike-stage canvas {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  pointer-events: none;
+  mask-image: radial-gradient(closest-side, #000 70%, transparent);
+}
+
+/* ALL TUNER LABS wipes in once the disc has spread, as in the ident. */
+.strike-lockup {
+  width: calc(var(--d) * 1.1);
+  height: auto;
+  margin-top: calc(var(--d) * 0.09);
+  clip-path: inset(0 100% 0 0);
+  animation: strike-wipe 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) 1.25s forwards;
+}
+@keyframes strike-wipe {
+  to { clip-path: inset(0 0 0 0); }
+}
+
+.strike-hint {
+  margin-top: 12px;
+  opacity: 0;
+  animation: strike-hint-in 0.6s ease 2.2s forwards;
+  transition: opacity 0.4s;
+}
+.strike-hint.strike-hint-done {
+  opacity: 0;
+  animation: none;
+}
+@keyframes strike-hint-in {
+  to { opacity: 1; }
+}
+
+/* The footer skyline draws itself in once it scrolls into view. */
+.js .skyline-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 2.4s cubic-bezier(0.3, 0.1, 0.2, 1);
+}
+.js .skyline-drawn .skyline-path { stroke-dashoffset: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .strike-lockup { animation: none; clip-path: none; }
+  .strike-hint { animation: none; opacity: 1; }
+  .js .skyline-path { transition: none; stroke-dashoffset: 0; }
+}
