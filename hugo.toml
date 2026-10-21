@@ -66,11 +66,10 @@ orgDescription = "Smoothing rough edges through lean technology and craft."
 founderName = "David Poblador i Garcia"
 founderURL = "https://davidpoblador.com"
 foundingLocation = "Barcelona, Spain"
-logoURL = "https://alltuner.com/statics/img/all-tuner-logo.svg"
+logoURL = "https://alltuner.com/statics/img/all-tuner-mark.png"
 logoWidth = 1024
 logoHeight = 1024
 sameAs = [
-  "https://twitter.com/alltuner_labs",
   "https://www.linkedin.com/company/alltuner",
   "https://github.com/alltuner",
   "https://bsky.app/profile/alltuner.com",
