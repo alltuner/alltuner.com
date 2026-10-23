@@ -21,7 +21,7 @@ steps:
   - "Vi lär känna er institution och föreslår en serie avsnitt."
   - "Vi skriver manusen och granskar dem, uppgift för uppgift."
   - "Vi producerar avsnitten och synkroniserar undertexterna med rösten."
-  - "Ni får en privat sida i er institutions stil, där ni kan lyssna på serien, dela den och bestämma er."
+  - "Ni får en privat sida i er institutions stil, där ni kan lyssna på serien och dela den."
 cta_title: "Vill ni höra er egen historia?"
 cta_button: "Skriv till oss"
 ---

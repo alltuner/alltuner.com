@@ -21,7 +21,7 @@ steps:
   - "We study your institution and propose a series of episodes."
   - "We write the scripts and review them, fact by fact."
   - "We produce the episodes and align the subtitles to the voice."
-  - "You get a private page in your institution's style to listen to the series, share it and decide."
+  - "You get a private page in your institution's style to listen to the series and share it."
 cta_title: "Want to hear your own collection?"
 cta_button: "Write to us"
 ---

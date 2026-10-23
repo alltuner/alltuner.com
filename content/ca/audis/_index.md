@@ -21,7 +21,7 @@ steps:
   - "Estudiem la vostra institució i us proposem una sèrie d'episodis."
   - "Escrivim els guions i els revisem, dada per dada."
   - "Produïm els episodis i sincronitzem els subtítols amb la veu."
-  - "Rebeu una pàgina privada amb la imatge de la vostra institució per escoltar la sèrie, compartir-la i decidir."
+  - "Rebeu una pàgina privada amb la imatge de la vostra institució per escoltar la sèrie i compartir-la."
 cta_title: "Voleu sentir la vostra pròpia col·lecció?"
 cta_button: "Escriviu-nos"
 ---
