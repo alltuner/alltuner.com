@@ -21,7 +21,7 @@ steps:
   - "Estudiamos su institución y le proponemos una serie de episodios."
   - "Escribimos los guiones y los revisamos, dato a dato."
   - "Producimos los episodios y sincronizamos los subtítulos con la voz."
-  - "Recibe una página privada con la imagen de su institución para escuchar la serie, compartirla y decidir."
+  - "Recibe una página privada con la imagen de su institución para escuchar la serie y compartirla."
 cta_title: "¿Quiere escuchar su propia colección?"
 cta_button: "Escríbanos"
 ---
