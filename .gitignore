@@ -18,3 +18,5 @@ static/fonts/
 # OS
 .DS_Store
 
+
+.wrangler/
