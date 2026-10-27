@@ -12,23 +12,23 @@ defaultContentLanguageInSubdir = false
 [languages]
   [languages.en]
     weight = 1
-    languageCode = "en"
-    languageName = "English"
+    locale = "en"
+    label = "English"
     contentDir = "content/en"
   [languages.ca]
     weight = 2
-    languageCode = "ca"
-    languageName = "Catala"
+    locale = "ca"
+    label = "Catala"
     contentDir = "content/ca"
   [languages.sv]
     weight = 3
-    languageCode = "sv"
-    languageName = "Svenska"
+    locale = "sv"
+    label = "Svenska"
     contentDir = "content/sv"
   [languages.es]
     weight = 4
-    languageCode = "es"
-    languageName = "Espanol"
+    locale = "es"
+    label = "Espanol"
     contentDir = "content/es"
 
 [markup.goldmark.renderer]
