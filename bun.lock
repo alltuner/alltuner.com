@@ -8,7 +8,7 @@
         "@fontsource-variable/fraunces": "^5.2.9",
         "@fontsource-variable/instrument-sans": "^5.2.8",
         "@tailwindcss/cli": "4.2.4",
-        "hugo-extended": "0.168.0",
+        "hugo-extended": "0.169.0",
         "instant.page": "^5.2.0",
         "tailwindcss": "4.2.4",
       },
@@ -102,7 +102,7 @@
 
     "graceful-fs": ["graceful-fs@4.2.11", "", {}, "sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ=="],
 
-    "hugo-extended": ["hugo-extended@0.168.0", "", { "dependencies": { "adm-zip": "^0.5.17", "tar": "^7.5.15" }, "hasInstallScript": true, "bin": { "hugo": "dist/cli.mjs", "hugo-extended": "dist/cli.mjs" } }, "sha512-KhWR1CWYrpIcM3aL+s0ii/rVKQDpTDVqWXKH4o2iRbcbj1O/0dHyKmk29zIcsHsjLHpfS+7Z228fBycDgv9gkw=="],
+    "hugo-extended": ["hugo-extended@0.169.0", "", { "dependencies": { "adm-zip": "^0.5.17", "tar": "^7.5.15" }, "hasInstallScript": true, "bin": { "hugo": "dist/cli.mjs", "hugo-extended": "dist/cli.mjs" } }, "sha512-TPBaU2eIhNZd9iY+0ejVJeGkZ6DieRpKHCanriritTr/Q89tJE41JQc2Ja4/Z1QzezIIQzhvAp1NlmzZWa7yww=="],
 
     "instant.page": ["instant.page@5.2.0", "", {}, "sha512-DUSwWyoHFOQnmEwJtg9vzDx8Ef8uNNvTxTmHjd0vN9/XEIb5EQkm/itpZMypoH3dJLJvtkrD97WOCKuMqDdMHQ=="],
 
